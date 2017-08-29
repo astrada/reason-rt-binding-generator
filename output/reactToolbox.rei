@@ -83,7 +83,7 @@ module Overlay: {
 
 module Snackbar: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     timeout::option float? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
@@ -118,7 +118,7 @@ module Snackbar: {
 };
 
 module ListItemActions: {
-  let make: type_::option string? => theme::option Js.t {..}? => array ReasonReact.reactElement;
+  let make: _type::option string? => theme::option Js.t {..}? => array ReasonReact.reactElement;
 };
 
 module DatePicker: {
@@ -157,16 +157,16 @@ module DatePicker: {
     onChange::option (ReactEventRe.Form.t => unit)? =>
     okLabel::option string? =>
     name::option string? =>
-    minDate::option Js.t {..}? =>
-    maxDate::option Js.t {..}? =>
+    minDate::option float? =>
+    maxDate::option float? =>
     locale::option string? =>
     label::option string? =>
     inputFormat::option Js.t {..}? =>
     inputClassName::option string? =>
     icon::option ReasonReact.reactElement? =>
     error::option string? =>
-    enabledDates::option Js.t {..}? =>
-    disabledDates::option Js.t {..}? =>
+    enabledDates::option array float? =>
+    disabledDates::option array float? =>
     className::option string? =>
     cancelLabel::option string? =>
     autoOk::option bool? =>
@@ -211,7 +211,7 @@ module TableHead: {
 
 module ListItemContent: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     legend::option string? =>
     caption::option ReasonReact.reactElement? =>
@@ -322,7 +322,7 @@ module Chip: {
 
 module BrowseButton: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     ripple::option bool? =>
@@ -366,7 +366,7 @@ module BrowseButton: {
 
 module IconButton: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     ripple::option bool? =>
@@ -405,10 +405,10 @@ module IconButton: {
 
 module Navigation: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
-    routes::option Js.t {..}? =>
+    routes::option array Js.t {..}? =>
     onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
     onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
     onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
@@ -432,7 +432,7 @@ module Navigation: {
     onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
     onClick::option (ReactEventRe.Mouse.t => unit)? =>
     className::option string? =>
-    actions::option Js.t {..}? =>
+    actions::option array Js.t {..}? =>
     array ReasonReact.reactElement;
 };
 
@@ -708,7 +708,7 @@ module RadioGroup: {
 
 module Button: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     ripple::option bool? =>
@@ -852,7 +852,7 @@ module AppBar: {
 module Autocomplete: {
   let make:
     value::option Js.t {..}? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     suggestionMatch::option string? =>
     style::option ReactDOMRe.style? =>
@@ -1049,12 +1049,12 @@ module MenuItem: {
 
 module ListItemLayout: {
   let make:
-    to_::option string? =>
+    _to::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     selectable::option bool? =>
     rightIcon::option string? =>
-    rightActions::option Js.t {..}? =>
+    rightActions::option array ReasonReact.reactElement? =>
     onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
     onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
     onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
@@ -1079,7 +1079,7 @@ module ListItemLayout: {
     onClick::option (ReactEventRe.Mouse.t => unit)? =>
     legend::option string? =>
     leftIcon::option string? =>
-    leftActions::option Js.t {..}? =>
+    leftActions::option array ReasonReact.reactElement? =>
     itemContent::option Js.t {..}? =>
     disabled::option bool? =>
     className::option string? =>
@@ -1288,7 +1288,7 @@ module Panel: {
 module ProgressBar: {
   let make:
     value::option float? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
@@ -1396,7 +1396,7 @@ module Checkbox: {
 module Drawer: {
   let make:
     withOverlay::option bool? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
@@ -1468,7 +1468,7 @@ module Tab: {
 module Input: {
   let make:
     value::option Js.t {..}? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     rows::option float? =>
@@ -1546,7 +1546,7 @@ module Layout: {
 
 module TimePicker: {
   let make:
-    value::option Js.t {..}? =>
+    value::option float? =>
     theme::option Js.t {..}? =>
     readonly::option bool? =>
     onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
@@ -1675,7 +1675,7 @@ module Dropdown: {
     theme::option Js.t {..}? =>
     template::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
-    source::Js.t {..} =>
+    source::array Js.t {..} =>
     required::option bool? =>
     onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
     onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
@@ -1714,7 +1714,7 @@ module Dropdown: {
 
 module Dialog: {
   let make:
-    type_::option string? =>
+    _type::option string? =>
     title::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
@@ -1747,7 +1747,7 @@ module Dialog: {
     onClick::option (ReactEventRe.Mouse.t => unit)? =>
     className::option string? =>
     active::option bool? =>
-    actions::option Js.t {..}? =>
+    actions::option array Js.t {..}? =>
     array ReasonReact.reactElement;
 };
 
@@ -1761,7 +1761,7 @@ module ListItemAction: {
 module NavDrawer: {
   let make:
     withOverlay::option bool? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     pinned::option bool? =>
@@ -1800,7 +1800,7 @@ module Sidebar: {
   let make:
     withOverlay::option bool? =>
     width::option float? =>
-    type_::option string? =>
+    _type::option string? =>
     theme::option Js.t {..}? =>
     style::option ReactDOMRe.style? =>
     pinned::option bool? =>

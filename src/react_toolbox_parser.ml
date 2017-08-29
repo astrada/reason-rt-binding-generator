@@ -150,13 +150,26 @@ let build_properties props_json =
          let property_type =
            if type_category = "union" then
              Component.Type.map_type "intrinsic" "string" is_optional
-           else if type_category = "intersection" || type_category = "array" then
+           else if type_category = "intersection" then
              Component.Type.map_type "intrinsic" "any" is_optional
+           else if type_category = "array" then
+             let element_type_json =
+               prop_json |> member "type" |> member "elementType" in
+             let type_category =
+               try
+               element_type_json |> member "type" |> to_string
+               with _ -> failwith name
+             in
+             let type_name =
+               element_type_json |> member "name" |> to_string in
+             let element_type =
+               Component.Type.map_type type_category type_name false in
+             let array_type = Component.Type.Array element_type in
+             if is_optional then Component.Type.Option array_type
+             else array_type
            else
              let type_name =
-               try
                prop_json |> member "type" |> member "name" |> to_string
-               with _ -> failwith name
              in
              if Component.Type.is_callback type_category type_name name then
                let callback_type = Component.Property.get_callback_type name in

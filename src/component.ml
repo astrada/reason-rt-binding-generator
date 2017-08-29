@@ -4,6 +4,7 @@ struct
     | String
     | Bool
     | Number
+    | Date
     | ClipboardCallback
     | CompositionCallback
     | KeyboardCallback
@@ -23,6 +24,7 @@ struct
     | Style
     | Object
     | Option of t
+    | Array of t
 
   let is_callback type_category type_name props_name =
     let is_name_valid =
@@ -40,6 +42,7 @@ struct
       | "React.ReactNode" when type_category = "reference" -> Element
       | "CSSProperties" when type_category = "reference" -> Style
       | "number" when type_category = "intrinsic" -> Number
+      | "Date" when type_category = "reference" -> Date
       | "any" when type_category = "intrinsic" -> Object
       | _ when type_category = "reference" -> Object
       | _ -> failwith ("map_type: " ^ type_name) in
@@ -48,7 +51,8 @@ struct
   let rec to_string = function
     | String -> "string"
     | Bool -> "bool"
-    | Number -> "float"
+    | Number
+    | Date -> "float"
     | ClipboardCallback -> "(ReactEventRe.Clipboard.t => unit)"
     | CompositionCallback -> "(ReactEventRe.Composition.t => unit)"
     | KeyboardCallback -> "(ReactEventRe.Keyboard.t => unit)"
@@ -68,6 +72,7 @@ struct
     | Style -> "ReactDOMRe.style"
     | Object -> "Js.t {..}"
     | Option t -> "option " ^ (to_string t)
+    | Array t -> "array " ^ (to_string t)
 
   let is_option = function
     | Option _ -> true

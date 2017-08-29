@@ -57,7 +57,7 @@ module IconMenu = {
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "selected": Js.Null_undefined.from_opt selected,
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
         "position": Js.Null_undefined.from_opt position,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
@@ -84,8 +84,8 @@ module IconMenu = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "menuRipple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean menuRipple),
-        "iconRipple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean iconRipple),
+        "menuRipple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmenuRipple),
+        "iconRipple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaniconRipple),
         "icon": Js.Null_undefined.from_opt icon,
         "className": Js.Null_undefined.from_opt className
       }
@@ -128,7 +128,7 @@ module ListItemText = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean primary),
+        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanprimary),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -173,9 +173,9 @@ module Overlay = {
         "theme": Js.Null_undefined.from_opt theme,
         "onEscKeyDown": Js.Null_undefined.from_opt onEscKeyDown,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "invisible": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean invisible),
+        "invisible": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninvisible),
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -184,7 +184,7 @@ module Snackbar = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/snackbar/Snackbar"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       timeout::(timeout: option float)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
@@ -219,7 +219,7 @@ module Snackbar = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "timeout": Js.Null_undefined.from_opt timeout,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
@@ -248,7 +248,7 @@ module Snackbar = {
         "onClick": Js.Null_undefined.from_opt onClick,
         "label": Js.Null_undefined.from_opt label,
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active),
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive),
         "action": Js.Null_undefined.from_opt action
       }
       children;
@@ -257,10 +257,10 @@ module Snackbar = {
 module ListItemActions = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/list/ListItemActions"];
-  let make type_::(type_: option string)=? theme::(theme: option Js.t {..})=? children =>
+  let make _type::(_type: option string)=? theme::(theme: option Js.t {..})=? children =>
     ReasonReact.wrapJsForReason
       ::reactClass
-      props::{"type_": Js.Null_undefined.from_opt type_, "theme": Js.Null_undefined.from_opt theme}
+      props::{"_type": Js.Null_undefined.from_opt _type, "theme": Js.Null_undefined.from_opt theme}
       children;
 };
 
@@ -302,16 +302,16 @@ module DatePicker = {
       onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
       okLabel::(okLabel: option string)=?
       name::(name: option string)=?
-      minDate::(minDate: option Js.t {..})=?
-      maxDate::(maxDate: option Js.t {..})=?
+      minDate::(minDate: option float)=?
+      maxDate::(maxDate: option float)=?
       locale::(locale: option string)=?
       label::(label: option string)=?
       inputFormat::(inputFormat: option Js.t {..})=?
       inputClassName::(inputClassName: option string)=?
       icon::(icon: option ReasonReact.reactElement)=?
       error::(error: option string)=?
-      enabledDates::(enabledDates: option Js.t {..})=?
-      disabledDates::(disabledDates: option Js.t {..})=?
+      enabledDates::(enabledDates: option array float)=?
+      disabledDates::(disabledDates: option array float)=?
       className::(className: option string)=?
       cancelLabel::(cancelLabel: option string)=?
       autoOk::(autoOk: option bool)=?
@@ -323,9 +323,9 @@ module DatePicker = {
         "value": Js.Null_undefined.from_opt value,
         "theme": Js.Null_undefined.from_opt theme,
         "sundayFirstDayOfWeek":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean sundayFirstDayOfWeek),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleansundayFirstDayOfWeek),
         "style": Js.Null_undefined.from_opt style,
-        "readonly": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean readonly),
+        "readonly": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanreadonly),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -355,8 +355,8 @@ module DatePicker = {
         "onChange": Js.Null_undefined.from_opt onChange,
         "okLabel": Js.Null_undefined.from_opt okLabel,
         "name": Js.Null_undefined.from_opt name,
-        "minDate": Js.Null_undefined.from_opt minDate,
-        "maxDate": Js.Null_undefined.from_opt maxDate,
+        "minDate": Js.Null_undefined.from_opt (optionMap Js.Date.from_floatminDate),
+        "maxDate": Js.Null_undefined.from_opt (optionMap Js.Date.from_floatmaxDate),
         "locale": Js.Null_undefined.from_opt locale,
         "label": Js.Null_undefined.from_opt label,
         "inputFormat": Js.Null_undefined.from_opt inputFormat,
@@ -367,8 +367,8 @@ module DatePicker = {
         "disabledDates": Js.Null_undefined.from_opt disabledDates,
         "className": Js.Null_undefined.from_opt className,
         "cancelLabel": Js.Null_undefined.from_opt cancelLabel,
-        "autoOk": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean autoOk),
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "autoOk": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanautoOk),
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -413,8 +413,8 @@ module TableHead = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selected),
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
+        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselected),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -439,9 +439,9 @@ module TableHead = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "multiSelectable":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multiSelectable),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmultiSelectable),
         "displaySelect":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean displaySelect),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisplaySelect),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -451,7 +451,7 @@ module ListItemContent = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/list/ListItemContent"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       legend::(legend: option string)=?
       caption::(caption: option ReasonReact.reactElement)=?
@@ -459,7 +459,7 @@ module ListItemContent = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "legend": Js.Null_undefined.from_opt legend,
         "caption": Js.Null_undefined.from_opt caption
@@ -538,9 +538,9 @@ module RadioButton = {
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
         "label": Js.Null_undefined.from_opt label,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean checked)
+        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanchecked)
       }
       children;
 };
@@ -582,8 +582,8 @@ module List = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
-        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean ripple),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
+        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanripple),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -671,7 +671,7 @@ module Chip = {
         "onDeleteClick": Js.Null_undefined.from_opt onDeleteClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "deletable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean deletable),
+        "deletable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandeletable),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -681,7 +681,7 @@ module BrowseButton = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/button/BrowseButton"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       ripple::(ripple: option bool)=?
@@ -724,12 +724,12 @@ module BrowseButton = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean ripple),
-        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean raised),
-        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean primary),
+        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanripple),
+        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanraised),
+        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanprimary),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -752,17 +752,17 @@ module BrowseButton = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean neutral),
-        "mini": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean mini),
+        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanneutral),
+        "mini": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmini),
         "label": Js.Null_undefined.from_opt label,
-        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean inverse),
+        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninverse),
         "icon": Js.Null_undefined.from_opt icon,
         "href": Js.Null_undefined.from_opt href,
-        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean floating),
-        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean flat),
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfloating),
+        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanflat),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean accent)
+        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanaccent)
       }
       children;
 };
@@ -771,7 +771,7 @@ module IconButton = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/button/IconButton"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       ripple::(ripple: option bool)=?
@@ -809,11 +809,11 @@ module IconButton = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean ripple),
-        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean primary),
+        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanripple),
+        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanprimary),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -836,13 +836,13 @@ module IconButton = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean neutral),
-        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean inverse),
+        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanneutral),
+        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninverse),
         "icon": Js.Null_undefined.from_opt icon,
         "href": Js.Null_undefined.from_opt href,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean accent)
+        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanaccent)
       }
       children;
 };
@@ -851,10 +851,10 @@ module Navigation = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/navigation/Navigation"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
-      routes::(routes: option Js.t {..})=?
+      routes::(routes: option array Js.t {..})=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
@@ -878,12 +878,12 @@ module Navigation = {
       onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       className::(className: option string)=?
-      actions::(actions: option Js.t {..})=?
+      actions::(actions: option array Js.t {..})=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "routes": Js.Null_undefined.from_opt routes,
@@ -984,9 +984,9 @@ module Switch = {
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
         "label": Js.Null_undefined.from_opt label,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean checked)
+        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanchecked)
       }
       children;
 };
@@ -1119,7 +1119,7 @@ module Avatar = {
         "onClick": Js.Null_undefined.from_opt onClick,
         "image": Js.Null_undefined.from_opt image,
         "icon": Js.Null_undefined.from_opt icon,
-        "cover": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean cover),
+        "cover": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleancover),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -1195,9 +1195,9 @@ module ListCheckbox = {
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
         "legend": Js.Null_undefined.from_opt legend,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean checked),
+        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanchecked),
         "caption": Js.Null_undefined.from_opt caption
       }
       children;
@@ -1304,8 +1304,8 @@ module TableRow = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selected),
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
+        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselected),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -1465,7 +1465,7 @@ module RadioGroup = {
         "onClick": Js.Null_undefined.from_opt onClick,
         "onChange": Js.Null_undefined.from_opt onChange,
         "name": Js.Null_undefined.from_opt name,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -1475,7 +1475,7 @@ module Button = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/button/Button"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       ripple::(ripple: option bool)=?
@@ -1518,12 +1518,12 @@ module Button = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean ripple),
-        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean raised),
-        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean primary),
+        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanripple),
+        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanraised),
+        "primary": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanprimary),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -1546,17 +1546,17 @@ module Button = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean neutral),
-        "mini": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean mini),
+        "neutral": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanneutral),
+        "mini": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmini),
         "label": Js.Null_undefined.from_opt label,
-        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean inverse),
+        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninverse),
         "icon": Js.Null_undefined.from_opt icon,
         "href": Js.Null_undefined.from_opt href,
-        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean floating),
-        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean flat),
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfloating),
+        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanflat),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean accent)
+        "accent": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanaccent)
       }
       children;
 };
@@ -1659,7 +1659,7 @@ module Card = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean raised),
+        "raised": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanraised),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -1731,7 +1731,7 @@ module AppBar = {
         "title": Js.Null_undefined.from_opt title,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "scrollHide": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean scrollHide),
+        "scrollHide": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanscrollHide),
         "rightIcon": Js.Null_undefined.from_opt rightIcon,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
@@ -1758,8 +1758,8 @@ module AppBar = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "leftIcon": Js.Null_undefined.from_opt leftIcon,
-        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean flat),
-        "fixed": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean fixed),
+        "flat": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanflat),
+        "fixed": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfixed),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -1770,7 +1770,7 @@ module Autocomplete = {
     "default" [@@bs.module "react-toolbox/lib/autocomplete/Autocomplete"];
   let make
       value::(value: option Js.t {..})=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       suggestionMatch::(suggestionMatch: option string)=?
       style::(style: option ReactDOMRe.style)=?
@@ -1828,22 +1828,22 @@ module Autocomplete = {
       ::reactClass
       props::{
         "value": Js.Null_undefined.from_opt value,
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "suggestionMatch": Js.Null_undefined.from_opt suggestionMatch,
         "style": Js.Null_undefined.from_opt style,
         "source": Js.Null_undefined.from_opt source,
         "showSuggestionsWhenValueIsSet":
           Js.Null_undefined.from_opt (
-            optionMap Js.Boolean.to_js_boolean showSuggestionsWhenValueIsSet
+            optionMap Js.Boolean.to_js_booleanshowSuggestionsWhenValueIsSet
           ),
         "showSelectedWhenNotInSource":
           Js.Null_undefined.from_opt (
-            optionMap Js.Boolean.to_js_boolean showSelectedWhenNotInSource
+            optionMap Js.Boolean.to_js_booleanshowSelectedWhenNotInSource
           ),
         "selectedPosition": Js.Null_undefined.from_opt selectedPosition,
         "rows": Js.Null_undefined.from_opt rows,
-        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean required),
+        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanrequired),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -1874,20 +1874,20 @@ module Autocomplete = {
         "onChange": Js.Null_undefined.from_opt onChange,
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
-        "multiple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multiple),
-        "multiline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multiline),
+        "multiple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmultiple),
+        "multiline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmultiline),
         "maxLength": Js.Null_undefined.from_opt maxLength,
         "label": Js.Null_undefined.from_opt label,
         "keepFocusOnChange":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean keepFocusOnChange),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleankeepFocusOnChange),
         "icon": Js.Null_undefined.from_opt icon,
         "hint": Js.Null_undefined.from_opt hint,
-        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean floating),
+        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfloating),
         "error": Js.Null_undefined.from_opt error,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "direction": Js.Null_undefined.from_opt direction,
         "className": Js.Null_undefined.from_opt className,
-        "allowCreate": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean allowCreate)
+        "allowCreate": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanallowCreate)
       }
       children;
 };
@@ -1957,7 +1957,7 @@ module TableCell = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "numeric": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean numeric),
+        "numeric": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleannumeric),
         "column": Js.Null_undefined.from_opt column,
         "className": Js.Null_undefined.from_opt className
       }
@@ -2009,10 +2009,10 @@ module Menu = {
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "selected": Js.Null_undefined.from_opt selected,
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
-        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean ripple),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
+        "ripple": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanripple),
         "position": Js.Null_undefined.from_opt position,
-        "outline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean outline),
+        "outline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanoutline),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -2039,7 +2039,7 @@ module Menu = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -2147,7 +2147,7 @@ module MenuItem = {
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "shortcut": Js.Null_undefined.from_opt shortcut,
-        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selected),
+        "selected": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselected),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -2171,7 +2171,7 @@ module MenuItem = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "icon": Js.Null_undefined.from_opt icon,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
         "caption": caption
       }
@@ -2182,12 +2182,12 @@ module ListItemLayout = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/list/ListItemLayout"];
   let make
-      to_::(to_: option string)=?
+      _to::(_to: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       selectable::(selectable: option bool)=?
       rightIcon::(rightIcon: option string)=?
-      rightActions::(rightActions: option Js.t {..})=?
+      rightActions::(rightActions: option array ReasonReact.reactElement)=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
@@ -2212,7 +2212,7 @@ module ListItemLayout = {
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       legend::(legend: option string)=?
       leftIcon::(leftIcon: option string)=?
-      leftActions::(leftActions: option Js.t {..})=?
+      leftActions::(leftActions: option array ReasonReact.reactElement)=?
       itemContent::(itemContent: option Js.t {..})=?
       disabled::(disabled: option bool)=?
       className::(className: option string)=?
@@ -2222,10 +2222,10 @@ module ListItemLayout = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "to_": Js.Null_undefined.from_opt to_,
+        "_to": Js.Null_undefined.from_opt _to,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
         "rightIcon": Js.Null_undefined.from_opt rightIcon,
         "rightActions": Js.Null_undefined.from_opt rightActions,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
@@ -2254,7 +2254,7 @@ module ListItemLayout = {
         "leftIcon": Js.Null_undefined.from_opt leftIcon,
         "leftActions": Js.Null_undefined.from_opt leftActions,
         "itemContent": Js.Null_undefined.from_opt itemContent,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
         "caption": Js.Null_undefined.from_opt caption,
         "avatar": Js.Null_undefined.from_opt avatar
@@ -2329,7 +2329,7 @@ module Link = {
         "href": Js.Null_undefined.from_opt href,
         "count": Js.Null_undefined.from_opt count,
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -2392,7 +2392,7 @@ module ListDivider = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "inset": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean inset),
+        "inset": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninset),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -2455,7 +2455,7 @@ module Portal = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "lockBody": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean lockBody),
+        "lockBody": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanlockBody),
         "container": Js.Null_undefined.from_opt container,
         "className": Js.Null_undefined.from_opt className
       }
@@ -2526,13 +2526,13 @@ module Tabs = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "onChange": Js.Null_undefined.from_opt onChange,
-        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean inverse),
+        "inverse": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninverse),
         "index": Js.Null_undefined.from_opt index,
         "hideMode": Js.Null_undefined.from_opt hideMode,
-        "fixed": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean fixed),
+        "fixed": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfixed),
         "disableAnimatedBottomBorder":
           Js.Null_undefined.from_opt (
-            optionMap Js.Boolean.to_js_boolean disableAnimatedBottomBorder
+            optionMap Js.Boolean.to_js_booleandisableAnimatedBottomBorder
           ),
         "className": Js.Null_undefined.from_opt className
       }
@@ -2577,7 +2577,7 @@ module Table = {
       props::{
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
+        "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanselectable),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -2602,7 +2602,7 @@ module Table = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "multiSelectable":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multiSelectable),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmultiSelectable),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -2667,7 +2667,7 @@ module Panel = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "className": Js.Null_undefined.from_opt className,
-        "bodyScroll": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean bodyScroll)
+        "bodyScroll": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanbodyScroll)
       }
       children;
 };
@@ -2677,7 +2677,7 @@ module ProgressBar = {
     "default" [@@bs.module "react-toolbox/lib/progress_bar/ProgressBar"];
   let make
       value::(value: option float)=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
@@ -2714,7 +2714,7 @@ module ProgressBar = {
       ::reactClass
       props::{
         "value": Js.Null_undefined.from_opt value,
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
@@ -2739,11 +2739,11 @@ module ProgressBar = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "multicolor": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multicolor),
+        "multicolor": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmulticolor),
         "mode": Js.Null_undefined.from_opt mode,
         "min": Js.Null_undefined.from_opt min,
         "max": Js.Null_undefined.from_opt max,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
         "buffer": Js.Null_undefined.from_opt buffer
       }
@@ -2813,7 +2813,7 @@ module CardMedia = {
         "onClick": Js.Null_undefined.from_opt onClick,
         "image": Js.Null_undefined.from_opt image,
         "contentOverlay":
-          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean contentOverlay),
+          Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleancontentOverlay),
         "color": Js.Null_undefined.from_opt color,
         "className": Js.Null_undefined.from_opt className,
         "aspectRatio": Js.Null_undefined.from_opt aspectRatio
@@ -2888,9 +2888,9 @@ module Checkbox = {
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
         "label": Js.Null_undefined.from_opt label,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean checked)
+        "checked": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanchecked)
       }
       children;
 };
@@ -2900,7 +2900,7 @@ module Drawer = {
     "default" [@@bs.module "react-toolbox/lib/drawer/Drawer"];
   let make
       withOverlay::(withOverlay: option bool)=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
@@ -2933,8 +2933,8 @@ module Drawer = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean withOverlay),
-        "type_": Js.Null_undefined.from_opt type_,
+        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanwithOverlay),
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
@@ -2960,9 +2960,9 @@ module Drawer = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean insideTree),
+        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninsideTree),
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -3034,11 +3034,11 @@ module Tab = {
         "onActive": Js.Null_undefined.from_opt onActive,
         "label": label,
         "icon": Js.Null_undefined.from_opt icon,
-        "hidden": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean hidden),
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "hidden": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanhidden),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
         "activeClassName": Js.Null_undefined.from_opt activeClassName,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -3048,7 +3048,7 @@ module Input = {
     "default" [@@bs.module "react-toolbox/lib/input/Input"];
   let make
       value::(value: option Js.t {..})=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       rows::(rows: option float)=?
@@ -3096,11 +3096,11 @@ module Input = {
       ::reactClass
       props::{
         "value": Js.Null_undefined.from_opt value,
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "rows": Js.Null_undefined.from_opt rows,
-        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean required),
+        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanrequired),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -3130,14 +3130,14 @@ module Input = {
         "onChange": Js.Null_undefined.from_opt onChange,
         "onBlur": Js.Null_undefined.from_opt onBlur,
         "name": Js.Null_undefined.from_opt name,
-        "multiline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean multiline),
+        "multiline": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanmultiline),
         "maxLength": Js.Null_undefined.from_opt maxLength,
         "label": Js.Null_undefined.from_opt label,
         "icon": Js.Null_undefined.from_opt icon,
         "hint": Js.Null_undefined.from_opt hint,
-        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean floating),
+        "floating": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanfloating),
         "error": Js.Null_undefined.from_opt error,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className
       }
       children;
@@ -3209,7 +3209,7 @@ module TimePicker = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/time_picker/TimePicker"];
   let make
-      value::(value: option Js.t {..})=?
+      value::(value: option float)=?
       theme::(theme: option Js.t {..})=?
       readonly::(readonly: option bool)=?
       onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
@@ -3230,9 +3230,9 @@ module TimePicker = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "value": Js.Null_undefined.from_opt value,
+        "value": Js.Null_undefined.from_opt (optionMap Js.Date.from_floatvalue),
         "theme": Js.Null_undefined.from_opt theme,
-        "readonly": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean readonly),
+        "readonly": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanreadonly),
         "onOverlayClick": Js.Null_undefined.from_opt onOverlayClick,
         "onKeyPress": Js.Null_undefined.from_opt onKeyPress,
         "onEscKeyDown": Js.Null_undefined.from_opt onEscKeyDown,
@@ -3246,7 +3246,7 @@ module TimePicker = {
         "format": Js.Null_undefined.from_opt format,
         "error": Js.Null_undefined.from_opt error,
         "cancelLabel": Js.Null_undefined.from_opt cancelLabel,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -3312,7 +3312,7 @@ module TabContent = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -3427,8 +3427,8 @@ module Slider = {
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "step": Js.Null_undefined.from_opt step,
-        "snaps": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean snaps),
-        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean pinned),
+        "snaps": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleansnaps),
+        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanpinned),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -3455,8 +3455,8 @@ module Slider = {
         "onChange": Js.Null_undefined.from_opt onChange,
         "min": Js.Null_undefined.from_opt min,
         "max": Js.Null_undefined.from_opt max,
-        "editable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean editable),
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "editable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaneditable),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
         "buffer": Js.Null_undefined.from_opt buffer
       }
@@ -3471,7 +3471,7 @@ module Dropdown = {
       theme::(theme: option Js.t {..})=?
       template::(template: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
-      source::(source: Js.t {..})
+      source::(source: array Js.t {..})
       required::(required: option bool)=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
@@ -3514,7 +3514,7 @@ module Dropdown = {
         "template": Js.Null_undefined.from_opt template,
         "style": Js.Null_undefined.from_opt style,
         "source": source,
-        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean required),
+        "required": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanrequired),
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
         "onTouchEnd": Js.Null_undefined.from_opt onTouchEnd,
@@ -3543,10 +3543,10 @@ module Dropdown = {
         "name": Js.Null_undefined.from_opt name,
         "label": Js.Null_undefined.from_opt label,
         "error": Js.Null_undefined.from_opt error,
-        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
+        "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleandisabled),
         "className": Js.Null_undefined.from_opt className,
-        "auto": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean auto),
-        "allowBlank": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean allowBlank)
+        "auto": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanauto),
+        "allowBlank": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanallowBlank)
       }
       children;
 };
@@ -3555,7 +3555,7 @@ module Dialog = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/dialog/Dialog"];
   let make
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       title::(title: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
@@ -3588,12 +3588,12 @@ module Dialog = {
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       className::(className: option string)=?
       active::(active: option bool)=?
-      actions::(actions: option Js.t {..})=?
+      actions::(actions: option array Js.t {..})=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "title": Js.Null_undefined.from_opt title,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
@@ -3625,7 +3625,7 @@ module Dialog = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active),
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive),
         "actions": Js.Null_undefined.from_opt actions
       }
       children;
@@ -3652,7 +3652,7 @@ module NavDrawer = {
     "default" [@@bs.module "react-toolbox/lib/layout/NavDrawer"];
   let make
       withOverlay::(withOverlay: option bool)=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       pinned::(pinned: option bool)=?
@@ -3688,11 +3688,11 @@ module NavDrawer = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean withOverlay),
-        "type_": Js.Null_undefined.from_opt type_,
+        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanwithOverlay),
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean pinned),
+        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanpinned),
         "permanentAt": Js.Null_undefined.from_opt permanentAt,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
@@ -3717,10 +3717,10 @@ module NavDrawer = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean insideTree),
-        "clipped": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean clipped),
+        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninsideTree),
+        "clipped": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanclipped),
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };
@@ -3731,7 +3731,7 @@ module Sidebar = {
   let make
       withOverlay::(withOverlay: option bool)=?
       width::(width: option float)=?
-      type_::(type_: option string)=?
+      _type::(_type: option string)=?
       theme::(theme: option Js.t {..})=?
       style::(style: option ReactDOMRe.style)=?
       pinned::(pinned: option bool)=?
@@ -3767,12 +3767,12 @@ module Sidebar = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean withOverlay),
+        "withOverlay": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanwithOverlay),
         "width": Js.Null_undefined.from_opt width,
-        "type_": Js.Null_undefined.from_opt type_,
+        "_type": Js.Null_undefined.from_opt _type,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
-        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean pinned),
+        "pinned": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanpinned),
         "permanentAt": Js.Null_undefined.from_opt permanentAt,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
@@ -3797,10 +3797,10 @@ module Sidebar = {
         "onDoubleClick": Js.Null_undefined.from_opt onDoubleClick,
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
-        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean insideTree),
-        "clipped": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean clipped),
+        "insideTree": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleaninsideTree),
+        "clipped": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanclipped),
         "className": Js.Null_undefined.from_opt className,
-        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean active)
+        "active": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_booleanactive)
       }
       children;
 };

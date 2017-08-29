@@ -3,6 +3,7 @@ module Type : sig
     | String
     | Bool
     | Number
+    | Date
     | ClipboardCallback
     | CompositionCallback
     | KeyboardCallback
@@ -22,6 +23,7 @@ module Type : sig
     | Style
     | Object
     | Option of t
+    | Array of t
 
   val is_callback: string -> string -> string -> bool
 

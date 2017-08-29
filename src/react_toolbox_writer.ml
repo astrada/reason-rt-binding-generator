@@ -13,44 +13,37 @@ let build_props_arg properties =
 
 let build_js_props properties =
   let prop_to_string property =
-    let name = property.Component.Property.name in
-    let conversion =
+    let rec convert property_type property_name =
       let open Component.Type in
-      match property.Component.Property.property_type with
+      match property_type with
+      | Bool ->
+        "Js.Boolean.to_js_boolean" ^ property_name
+      | Date ->
+        "Js.Date.from_float" ^ property_name
       | String
       | Object ->
-        name
-      | Option ClipboardCallback
-      | Option CompositionCallback
-      | Option KeyboardCallback
-      | Option FocusCallback
-      | Option FormCallback
-      | Option MouseCallback
-      | Option SelectionCallback
-      | Option TouchCallback
-      | Option UICallback
-      | Option WheelCallback
-      | Option MediaCallback
-      | Option ImageCallback
-      | Option AnimationCallback
-      | Option TransitionCallback
-      | Option GenericCallback
-      | Option Element
-      | Option Number
-      | Option Object
-      | Option String
-      | Option Style ->
-        "Js.Null_undefined.from_opt " ^ name
-      | Option Bool ->
+        property_name
+      | Array (Bool as t)
+      | Array (Date as t) ->
         Printf.sprintf
-          "Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean %s)"
-          name
+          "Array.map (fun x -> %s) %s"
+          (convert t "x") property_name
+      | Array _ ->
+        property_name
+      | Option (Bool as t)
+      | Option (Date as t) ->
+        Printf.sprintf
+          "Js.Null_undefined.from_opt (optionMap %s)"
+          (convert t property_name)
+      | Option _ ->
+        "Js.Null_undefined.from_opt " ^ property_name
       | _ ->
         failwith
-          ("prop_to_string: " ^ (Component.Type.to_string
-              property.Component.Property.property_type))
+          ("prop_to_string: " ^ (Component.Type.to_string property_type))
     in
-    Printf.sprintf "\"%s\": %s" name conversion
+    let name = property.Component.Property.name in
+    Printf.sprintf "\"%s\": %s"
+      name (convert property.Component.Property.property_type name)
   in
   let prop_strings = List.map prop_to_string properties in
   String.concat ", " prop_strings
