@@ -1,4 +1,9 @@
 module Type : sig
+  type enum = {
+    name: string;
+    values: string list;
+  }
+
   type t =
     | String
     | Bool
@@ -22,6 +27,7 @@ module Type : sig
     | Element
     | Style
     | Object
+    | Enum of enum
     | Option of t
     | Array of t
 
@@ -32,6 +38,8 @@ module Type : sig
   val to_string: t -> string
 
   val is_option: t -> bool
+
+  val is_enum: t -> bool
 
 end
 

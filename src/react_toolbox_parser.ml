@@ -124,11 +124,6 @@ let find_components index =
     []
     class_ids
 
-let clean_name name =
-  let keywords = ["type"; "to"] in
-  if List.mem name keywords then "_" ^ name
-  else name
-
 let build_properties props_json =
   let property_kind = 1024 in
   let open Yojson.Basic.Util in
@@ -138,7 +133,7 @@ let build_properties props_json =
     |> flatten in
   List.fold_left
     (fun props prop_json ->
-       let name = clean_name (prop_json |> member "name" |> to_string) in
+       let name = prop_json |> member "name" |> to_string in
        if prop_json |> member "kind" |> to_int = property_kind &&
           not (List.mem name Component.Property.props_blacklist) then
          let type_category =
@@ -149,17 +144,37 @@ let build_properties props_json =
            with Type_error _ -> false in
          let property_type =
            if type_category = "union" then
-             Component.Type.map_type "intrinsic" "string" is_optional
+             let union_types =
+               [prop_json]
+               |> filter_member "type"
+               |> filter_member "types"
+               |> flatten in
+             let is_enum =
+               let xs = union_types
+                        |> filter_member "type"
+                        |> filter_string in
+               List.length xs > 0 &&
+               List.for_all (fun x -> x = "stringLiteral") xs in
+             if is_enum then
+               let union_values =
+                 union_types
+                 |> filter_member "value"
+                 |> filter_string in
+               let enum_type =
+                 Component.Type.Enum {
+                   Component.Type.name = String.capitalize_ascii name;
+                   values = union_values;
+                 } in
+               if is_optional then Component.Type.Option enum_type
+               else enum_type
+             else Component.Type.map_type "intrinsic" "any" is_optional
            else if type_category = "intersection" then
              Component.Type.map_type "intrinsic" "any" is_optional
            else if type_category = "array" then
              let element_type_json =
                prop_json |> member "type" |> member "elementType" in
              let type_category =
-               try
-               element_type_json |> member "type" |> to_string
-               with _ -> failwith name
-             in
+               element_type_json |> member "type" |> to_string in
              let type_name =
                element_type_json |> member "name" |> to_string in
              let element_type =
@@ -169,8 +184,7 @@ let build_properties props_json =
              else array_type
            else
              let type_name =
-               prop_json |> member "type" |> member "name" |> to_string
-             in
+               prop_json |> member "type" |> member "name" |> to_string in
              if Component.Type.is_callback type_category type_name name then
                let callback_type = Component.Property.get_callback_type name in
                if is_optional then Component.Type.Option callback_type

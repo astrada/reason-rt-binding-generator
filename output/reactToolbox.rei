@@ -1,1836 +1,2051 @@
-module ThemeProvider: {type theme; let make: theme::theme => array ReasonReact.reactElement;};
+module ThemeProvider: {
+  type theme;
+  let make:
+    theme::theme =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+};
 
 module IconMenu: {
+  module Position: {
+    type t =
+      | Auto
+      | Static
+      | TopLeft
+      | TopRight
+      | BottomLeft
+      | BottomRight;
+    let to_string: t => string;
+  };
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selected::option Js.t {..}? =>
-    selectable::option bool? =>
-    position::option string? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onShow::option (ReactEventRe.Synthetic.t => unit)? =>
-    onSelect::option (ReactEventRe.Selection.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onHide::option (ReactEventRe.Synthetic.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    menuRipple::option bool? =>
-    iconRipple::option bool? =>
-    icon::option ReasonReact.reactElement? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selected::Js.t {..}? =>
+    selectable::bool? =>
+    position::Position.t? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onShow::(ReactEventRe.Synthetic.t => unit)? =>
+    onSelect::(ReactEventRe.Selection.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onHide::(ReactEventRe.Synthetic.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    menuRipple::bool? =>
+    iconRipple::bool? =>
+    icon::ReasonReact.reactElement? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListItemText: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    primary::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    primary::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Overlay: {
   let make:
-    theme::option Js.t {..}? =>
-    onEscKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    invisible::option bool? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    invisible::bool? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Snackbar: {
+  module Type: {
+    type t =
+      | Accept
+      | Cancel
+      | Warning;
+    let to_string: t => string;
+  };
   let make:
-    _type::option string? =>
-    timeout::option float? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onTimeout::option (ReactEventRe.Synthetic.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    label::option string? =>
-    className::option string? =>
-    active::option bool? =>
-    action::option string? =>
-    array ReasonReact.reactElement;
+    _type::Type.t? =>
+    timeout::float? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onTimeout::(ReactEventRe.Synthetic.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    label::string? =>
+    className::string? =>
+    active::bool? =>
+    action::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListItemActions: {
-  let make: _type::option string? => theme::option Js.t {..}? => array ReasonReact.reactElement;
+  module Type: {
+    type t =
+      | Left
+      | Right;
+    let to_string: t => string;
+  };
+  let make:
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module DatePicker: {
   let make:
-    value::option string? =>
-    theme::option Js.t {..}? =>
-    sundayFirstDayOfWeek::option bool? =>
-    style::option ReactDOMRe.style? =>
-    readonly::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onKeyPress::option (ReactEventRe.Keyboard.t => unit)? =>
-    onEscKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onDismiss::option (ReactEventRe.Synthetic.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    okLabel::option string? =>
-    name::option string? =>
-    minDate::option float? =>
-    maxDate::option float? =>
-    locale::option string? =>
-    label::option string? =>
-    inputFormat::option Js.t {..}? =>
-    inputClassName::option string? =>
-    icon::option ReasonReact.reactElement? =>
-    error::option string? =>
-    enabledDates::option array float? =>
-    disabledDates::option array float? =>
-    className::option string? =>
-    cancelLabel::option string? =>
-    autoOk::option bool? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    theme::Js.t {..}? =>
+    sundayFirstDayOfWeek::bool? =>
+    style::ReactDOMRe.style? =>
+    readonly::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
+    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onDismiss::(ReactEventRe.Synthetic.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    okLabel::string? =>
+    name::string? =>
+    minDate::float? =>
+    maxDate::float? =>
+    locale::Js.t {..}? =>
+    label::string? =>
+    inputFormat::Js.t {..}? =>
+    inputClassName::string? =>
+    icon::ReasonReact.reactElement? =>
+    error::string? =>
+    enabledDates::array float? =>
+    disabledDates::array float? =>
+    className::string? =>
+    cancelLabel::string? =>
+    autoOk::bool? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module TableHead: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selected::option bool? =>
-    selectable::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onSelect::option (ReactEventRe.Selection.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    multiSelectable::option bool? =>
-    displaySelect::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selected::bool? =>
+    selectable::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onSelect::(ReactEventRe.Selection.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    multiSelectable::bool? =>
+    displaySelect::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListItemContent: {
+  module Type: {
+    type t =
+      | Auto
+      | Normal
+      | Large;
+    let to_string: t => string;
+  };
   let make:
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    legend::option string? =>
-    caption::option ReasonReact.reactElement? =>
-    array ReasonReact.reactElement;
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    legend::string? =>
+    caption::ReasonReact.reactElement? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module RadioButton: {
   let make:
-    value::option Js.t {..}? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    label::option ReasonReact.reactElement? =>
-    disabled::option bool? =>
-    className::option string? =>
-    checked::option bool? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    label::ReasonReact.reactElement? =>
+    disabled::bool? =>
+    className::string? =>
+    checked::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module List: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selectable::option bool? =>
-    ripple::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selectable::bool? =>
+    ripple::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Chip: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onDeleteClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    deletable::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onDeleteClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    deletable::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module BrowseButton: {
   let make:
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    ripple::option bool? =>
-    raised::option bool? =>
-    primary::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    neutral::option bool? =>
-    mini::option bool? =>
-    label::option string? =>
-    inverse::option bool? =>
-    icon::option ReasonReact.reactElement? =>
-    href::option string? =>
-    floating::option bool? =>
-    flat::option bool? =>
-    disabled::option bool? =>
-    className::option string? =>
-    accent::option bool? =>
-    array ReasonReact.reactElement;
+    _type::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    ripple::bool? =>
+    raised::bool? =>
+    primary::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    neutral::bool? =>
+    mini::bool? =>
+    label::string? =>
+    inverse::bool? =>
+    icon::ReasonReact.reactElement? =>
+    href::string? =>
+    floating::bool? =>
+    flat::bool? =>
+    disabled::bool? =>
+    className::string? =>
+    accent::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module IconButton: {
   let make:
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    ripple::option bool? =>
-    primary::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    neutral::option bool? =>
-    inverse::option bool? =>
-    icon::option ReasonReact.reactElement? =>
-    href::option string? =>
-    disabled::option bool? =>
-    className::option string? =>
-    accent::option bool? =>
-    array ReasonReact.reactElement;
+    _type::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    ripple::bool? =>
+    primary::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    neutral::bool? =>
+    inverse::bool? =>
+    icon::ReasonReact.reactElement? =>
+    href::string? =>
+    disabled::bool? =>
+    className::string? =>
+    accent::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Navigation: {
+  module Type: {
+    type t =
+      | Vertical
+      | Horizontal;
+    let to_string: t => string;
+  };
   let make:
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    routes::option array Js.t {..}? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    actions::option array Js.t {..}? =>
-    array ReasonReact.reactElement;
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    routes::array (Js.t {..})? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    actions::array (Js.t {..})? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Switch: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    label::option string? =>
-    disabled::option bool? =>
-    className::option string? =>
-    checked::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    label::string? =>
+    disabled::bool? =>
+    className::string? =>
+    checked::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListSubHeader: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    caption::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    caption::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Avatar: {
   let make:
-    title::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    image::option ReasonReact.reactElement? =>
-    icon::option ReasonReact.reactElement? =>
-    cover::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    title::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    image::ReasonReact.reactElement? =>
+    icon::ReasonReact.reactElement? =>
+    cover::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListCheckbox: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    legend::option string? =>
-    disabled::option bool? =>
-    className::option string? =>
-    checked::option bool? =>
-    caption::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    legend::string? =>
+    disabled::bool? =>
+    className::string? =>
+    checked::bool? =>
+    caption::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module MenuDivider: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module TableRow: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selected::option bool? =>
-    selectable::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onSelect::option (ReactEventRe.Selection.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    idx::option float? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selected::bool? =>
+    selectable::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onSelect::(ReactEventRe.Selection.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    idx::float? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module CardTitle: {
   let make:
-    title::option ReasonReact.reactElement? =>
-    theme::option Js.t {..}? =>
-    subtitle::option ReasonReact.reactElement? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    avatar::option ReasonReact.reactElement? =>
-    array ReasonReact.reactElement;
+    title::ReasonReact.reactElement? =>
+    theme::Js.t {..}? =>
+    subtitle::ReasonReact.reactElement? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    avatar::ReasonReact.reactElement? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module RadioGroup: {
   let make:
-    value::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    name::option string? =>
-    disabled::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    name::string? =>
+    disabled::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Button: {
   let make:
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    ripple::option bool? =>
-    raised::option bool? =>
-    primary::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    neutral::option bool? =>
-    mini::option bool? =>
-    label::option string? =>
-    inverse::option bool? =>
-    icon::option ReasonReact.reactElement? =>
-    href::option string? =>
-    floating::option bool? =>
-    flat::option bool? =>
-    disabled::option bool? =>
-    className::option string? =>
-    accent::option bool? =>
-    array ReasonReact.reactElement;
+    _type::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    ripple::bool? =>
+    raised::bool? =>
+    primary::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    neutral::bool? =>
+    mini::bool? =>
+    label::string? =>
+    inverse::bool? =>
+    icon::ReasonReact.reactElement? =>
+    href::string? =>
+    floating::bool? =>
+    flat::bool? =>
+    disabled::bool? =>
+    className::string? =>
+    accent::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module CardText: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Card: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    raised::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    raised::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module AppBar: {
   let make:
-    title::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    scrollHide::option bool? =>
-    rightIcon::option ReasonReact.reactElement? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onRightIconClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onLeftIconClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    leftIcon::option ReasonReact.reactElement? =>
-    flat::option bool? =>
-    fixed::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    title::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    scrollHide::bool? =>
+    rightIcon::ReasonReact.reactElement? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onRightIconClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onLeftIconClick::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    leftIcon::ReasonReact.reactElement? =>
+    flat::bool? =>
+    fixed::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Autocomplete: {
+  module SuggestionMatch: {
+    type t =
+      | Disabled
+      | Start
+      | Anywhere
+      | Word;
+    let to_string: t => string;
+  };
+  module SelectedPosition: {
+    type t =
+      | Above
+      | Below
+      | None;
+    let to_string: t => string;
+  };
+  module Direction: {
+    type t =
+      | Auto
+      | Up
+      | Down;
+    let to_string: t => string;
+  };
   let make:
-    value::option Js.t {..}? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    suggestionMatch::option string? =>
-    style::option ReactDOMRe.style? =>
-    source::option Js.t {..}? =>
-    showSuggestionsWhenValueIsSet::option bool? =>
-    showSelectedWhenNotInSource::option bool? =>
-    selectedPosition::option string? =>
-    rows::option float? =>
-    required::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onQueryChange::option (ReactEventRe.Synthetic.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onKeyUp::option (ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::option (ReactEventRe.Keyboard.t => unit)? =>
-    onKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    multiple::option bool? =>
-    multiline::option bool? =>
-    maxLength::option float? =>
-    label::option ReasonReact.reactElement? =>
-    keepFocusOnChange::option bool? =>
-    icon::option ReasonReact.reactElement? =>
-    hint::option ReasonReact.reactElement? =>
-    floating::option bool? =>
-    error::option ReasonReact.reactElement? =>
-    disabled::option bool? =>
-    direction::option string? =>
-    className::option string? =>
-    allowCreate::option bool? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    _type::string? =>
+    theme::Js.t {..}? =>
+    suggestionMatch::SuggestionMatch.t? =>
+    style::ReactDOMRe.style? =>
+    source::Js.t {..}? =>
+    showSuggestionsWhenValueIsSet::bool? =>
+    showSelectedWhenNotInSource::bool? =>
+    selectedPosition::SelectedPosition.t? =>
+    rows::float? =>
+    required::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onQueryChange::(ReactEventRe.Synthetic.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onKeyUp::(ReactEventRe.Keyboard.t => unit)? =>
+    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
+    onKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    multiple::bool? =>
+    multiline::bool? =>
+    maxLength::float? =>
+    label::ReasonReact.reactElement? =>
+    keepFocusOnChange::bool? =>
+    icon::ReasonReact.reactElement? =>
+    hint::ReasonReact.reactElement? =>
+    floating::bool? =>
+    error::ReasonReact.reactElement? =>
+    disabled::bool? =>
+    direction::Direction.t? =>
+    className::string? =>
+    allowCreate::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module TableCell: {
+  module TagName: {
+    type t =
+      | Td
+      | Th;
+    let to_string: t => string;
+  };
+  module Sorted: {
+    type t =
+      | Asc
+      | Desc;
+    let to_string: t => string;
+  };
   let make:
-    theme::option Js.t {..}? =>
-    tagName::option string? =>
-    style::option ReactDOMRe.style? =>
-    sorted::option string? =>
-    row::option float? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    numeric::option bool? =>
-    column::option float? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    tagName::TagName.t? =>
+    style::ReactDOMRe.style? =>
+    sorted::Sorted.t? =>
+    row::float? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    numeric::bool? =>
+    column::float? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Menu: {
+  module Position: {
+    type t =
+      | Auto
+      | Static
+      | TopLeft
+      | TopRight
+      | BottomLeft
+      | BottomRight;
+    let to_string: t => string;
+  };
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selected::option Js.t {..}? =>
-    selectable::option bool? =>
-    ripple::option bool? =>
-    position::option string? =>
-    outline::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onShow::option (ReactEventRe.Synthetic.t => unit)? =>
-    onSelect::option (ReactEventRe.Selection.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onHide::option (ReactEventRe.Synthetic.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selected::Js.t {..}? =>
+    selectable::bool? =>
+    ripple::bool? =>
+    position::Position.t? =>
+    outline::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onShow::(ReactEventRe.Synthetic.t => unit)? =>
+    onSelect::(ReactEventRe.Selection.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onHide::(ReactEventRe.Synthetic.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module CardActions: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module MenuItem: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    shortcut::option string? =>
-    selected::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    icon::option ReasonReact.reactElement? =>
-    disabled::option bool? =>
-    className::option string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    shortcut::string? =>
+    selected::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    icon::ReasonReact.reactElement? =>
+    disabled::bool? =>
+    className::string? =>
     caption::string =>
-    array ReasonReact.reactElement;
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListItemLayout: {
   let make:
-    _to::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selectable::option bool? =>
-    rightIcon::option string? =>
-    rightActions::option array ReasonReact.reactElement? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    legend::option string? =>
-    leftIcon::option string? =>
-    leftActions::option array ReasonReact.reactElement? =>
-    itemContent::option Js.t {..}? =>
-    disabled::option bool? =>
-    className::option string? =>
-    caption::option string? =>
-    avatar::option string? =>
-    array ReasonReact.reactElement;
+    _to::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selectable::bool? =>
+    rightIcon::Js.t {..}? =>
+    rightActions::array ReasonReact.reactElement? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    legend::string? =>
+    leftIcon::Js.t {..}? =>
+    leftActions::array ReasonReact.reactElement? =>
+    itemContent::Js.t {..}? =>
+    disabled::bool? =>
+    className::string? =>
+    caption::string? =>
+    avatar::Js.t {..}? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Link: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    label::option string? =>
-    icon::option ReasonReact.reactElement? =>
-    href::option string? =>
-    count::option float? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    label::string? =>
+    icon::ReasonReact.reactElement? =>
+    href::string? =>
+    count::float? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListDivider: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    inset::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    inset::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Portal: {
   let make:
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    lockBody::option bool? =>
-    container::option Js.t {..}? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    lockBody::bool? =>
+    container::Js.t {..}? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Tabs: {
+  module HideMode: {
+    type t =
+      | Display
+      | Unmounted;
+    let to_string: t => string;
+  };
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    inverse::option bool? =>
-    index::option float? =>
-    hideMode::option string? =>
-    fixed::option bool? =>
-    disableAnimatedBottomBorder::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    inverse::bool? =>
+    index::float? =>
+    hideMode::HideMode.t? =>
+    fixed::bool? =>
+    disableAnimatedBottomBorder::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Table: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    selectable::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onRowSelect::option (ReactEventRe.Synthetic.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    multiSelectable::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    selectable::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onRowSelect::(ReactEventRe.Synthetic.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    multiSelectable::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Panel: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    bodyScroll::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    bodyScroll::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ProgressBar: {
+  module Type: {
+    type t =
+      | Linear
+      | Circular;
+    let to_string: t => string;
+  };
+  module Mode: {
+    type t =
+      | Determinate
+      | Indeterminate;
+    let to_string: t => string;
+  };
   let make:
-    value::option float? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    multicolor::option bool? =>
-    mode::option string? =>
-    min::option float? =>
-    max::option float? =>
-    disabled::option bool? =>
-    className::option string? =>
-    buffer::option float? =>
-    array ReasonReact.reactElement;
+    value::float? =>
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    multicolor::bool? =>
+    mode::Mode.t? =>
+    min::float? =>
+    max::float? =>
+    disabled::bool? =>
+    className::string? =>
+    buffer::float? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module CardMedia: {
+  module AspectRatio: {
+    type t =
+      | Wide
+      | Square;
+    let to_string: t => string;
+  };
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    image::option ReasonReact.reactElement? =>
-    contentOverlay::option bool? =>
-    color::option string? =>
-    className::option string? =>
-    aspectRatio::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    image::ReasonReact.reactElement? =>
+    contentOverlay::bool? =>
+    color::string? =>
+    className::string? =>
+    aspectRatio::AspectRatio.t? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Checkbox: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    label::option ReasonReact.reactElement? =>
-    disabled::option bool? =>
-    className::option string? =>
-    checked::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    label::ReasonReact.reactElement? =>
+    disabled::bool? =>
+    className::string? =>
+    checked::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Drawer: {
+  module Type: {
+    type t =
+      | Left
+      | Right;
+    let to_string: t => string;
+  };
   let make:
-    withOverlay::option bool? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    insideTree::option bool? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    withOverlay::bool? =>
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    insideTree::bool? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Tab: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onActive::option (ReactEventRe.Synthetic.t => unit)? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onActive::(ReactEventRe.Synthetic.t => unit)? =>
     label::string =>
-    icon::option ReasonReact.reactElement? =>
-    hidden::option bool? =>
-    disabled::option bool? =>
-    className::option string? =>
-    activeClassName::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    icon::ReasonReact.reactElement? =>
+    hidden::bool? =>
+    disabled::bool? =>
+    className::string? =>
+    activeClassName::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Input: {
   let make:
-    value::option Js.t {..}? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    rows::option float? =>
-    required::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onKeyUp::option (ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::option (ReactEventRe.Keyboard.t => unit)? =>
-    onKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    multiline::option bool? =>
-    maxLength::option float? =>
-    label::option ReasonReact.reactElement? =>
-    icon::option ReasonReact.reactElement? =>
-    hint::option ReasonReact.reactElement? =>
-    floating::option bool? =>
-    error::option ReasonReact.reactElement? =>
-    disabled::option bool? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    _type::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    rows::float? =>
+    required::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onKeyUp::(ReactEventRe.Keyboard.t => unit)? =>
+    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
+    onKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    multiline::bool? =>
+    maxLength::float? =>
+    label::ReasonReact.reactElement? =>
+    icon::ReasonReact.reactElement? =>
+    hint::ReasonReact.reactElement? =>
+    floating::bool? =>
+    error::ReasonReact.reactElement? =>
+    disabled::bool? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Layout: {
   let make:
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module TimePicker: {
+  module Format: {
+    type t =
+      | V_24hr
+      | Ampm;
+    let to_string: t => string;
+  };
   let make:
-    value::option float? =>
-    theme::option Js.t {..}? =>
-    readonly::option bool? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onKeyPress::option (ReactEventRe.Keyboard.t => unit)? =>
-    onEscKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onDismiss::option (ReactEventRe.Synthetic.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    okLabel::option string? =>
-    label::option string? =>
-    inputClassName::option string? =>
-    icon::option ReasonReact.reactElement? =>
-    format::option string? =>
-    error::option string? =>
-    cancelLabel::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    value::float? =>
+    theme::Js.t {..}? =>
+    readonly::bool? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
+    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onDismiss::(ReactEventRe.Synthetic.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    okLabel::string? =>
+    label::string? =>
+    inputClassName::string? =>
+    icon::ReasonReact.reactElement? =>
+    format::Format.t? =>
+    error::string? =>
+    cancelLabel::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module TabContent: {
   let make:
-    theme::option Js.t {..}? =>
-    tabIndex::option float? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    tabIndex::float? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module FontIcon: {
   let make:
-    value::option ReasonReact.reactElement? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    array ReasonReact.reactElement;
+    value::ReasonReact.reactElement? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Slider: {
   let make:
-    value::option float? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    step::option float? =>
-    snaps::option bool? =>
-    pinned::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStop::option (ReactEventRe.Synthetic.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    min::option float? =>
-    max::option float? =>
-    editable::option bool? =>
-    disabled::option bool? =>
-    className::option string? =>
-    buffer::option float? =>
-    array ReasonReact.reactElement;
+    value::float? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    step::float? =>
+    snaps::bool? =>
+    pinned::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStop::(ReactEventRe.Synthetic.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    min::float? =>
+    max::float? =>
+    editable::bool? =>
+    disabled::bool? =>
+    className::string? =>
+    buffer::float? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Dropdown: {
   let make:
-    value::option string? =>
-    theme::option Js.t {..}? =>
-    template::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    source::array Js.t {..} =>
-    required::option bool? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onFocus::option (ReactEventRe.Focus.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onChange::option (ReactEventRe.Form.t => unit)? =>
-    onBlur::option (ReactEventRe.Focus.t => unit)? =>
-    name::option string? =>
-    label::option string? =>
-    error::option string? =>
-    disabled::option bool? =>
-    className::option string? =>
-    auto::option bool? =>
-    allowBlank::option bool? =>
-    array ReasonReact.reactElement;
+    value::Js.t {..}? =>
+    theme::Js.t {..}? =>
+    template::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    source::array (Js.t {..}) =>
+    required::bool? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onFocus::(ReactEventRe.Focus.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(ReactEventRe.Form.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => unit)? =>
+    name::string? =>
+    label::string? =>
+    error::string? =>
+    disabled::bool? =>
+    className::string? =>
+    auto::bool? =>
+    allowBlank::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Dialog: {
   let make:
-    _type::option string? =>
-    title::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onOverlayMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onOverlayMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onOverlayMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onEscKeyDown::option (ReactEventRe.Keyboard.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    className::option string? =>
-    active::option bool? =>
-    actions::option array Js.t {..}? =>
-    array ReasonReact.reactElement;
+    _type::Js.t {..}? =>
+    title::string? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onOverlayMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onOverlayMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onOverlayMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    className::string? =>
+    active::bool? =>
+    actions::array (Js.t {..})? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module ListItemAction: {
   let make:
-    theme::option Js.t {..}? =>
-    action::option ReasonReact.reactElement? =>
-    array ReasonReact.reactElement;
+    theme::Js.t {..}? =>
+    action::ReasonReact.reactElement? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module NavDrawer: {
+  module Type: {
+    type t =
+      | Left
+      | Right;
+    let to_string: t => string;
+  };
+  module PermanentAt: {
+    type t =
+      | Sm
+      | SmTablet
+      | Md
+      | Lg
+      | LgTablet
+      | Xl
+      | Xxl
+      | Xxxl;
+    let to_string: t => string;
+  };
   let make:
-    withOverlay::option bool? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    pinned::option bool? =>
-    permanentAt::option string? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    insideTree::option bool? =>
-    clipped::option bool? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    withOverlay::bool? =>
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    pinned::bool? =>
+    permanentAt::PermanentAt.t? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    insideTree::bool? =>
+    clipped::bool? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
 
 module Sidebar: {
+  module Type: {
+    type t =
+      | Left
+      | Right;
+    let to_string: t => string;
+  };
+  module PermanentAt: {
+    type t =
+      | Sm
+      | SmTablet
+      | Md
+      | Lg
+      | LgTablet
+      | Xl
+      | Xxl
+      | Xxxl;
+    let to_string: t => string;
+  };
   let make:
-    withOverlay::option bool? =>
-    width::option float? =>
-    _type::option string? =>
-    theme::option Js.t {..}? =>
-    style::option ReactDOMRe.style? =>
-    pinned::option bool? =>
-    permanentAt::option string? =>
-    onTouchStart::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::option (ReactEventRe.Touch.t => unit)? =>
-    onTouchCancel::option (ReactEventRe.Touch.t => unit)? =>
-    onOverlayClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrop::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::option (ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::option (ReactEventRe.Mouse.t => unit)? =>
-    onDrag::option (ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::option (ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::option (ReactEventRe.Mouse.t => unit)? =>
-    onClick::option (ReactEventRe.Mouse.t => unit)? =>
-    insideTree::option bool? =>
-    clipped::option bool? =>
-    className::option string? =>
-    active::option bool? =>
-    array ReasonReact.reactElement;
+    withOverlay::bool? =>
+    width::float? =>
+    _type::Type.t? =>
+    theme::Js.t {..}? =>
+    style::ReactDOMRe.style? =>
+    pinned::bool? =>
+    permanentAt::PermanentAt.t? =>
+    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
+    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
+    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
+    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
+    onDrop::(ReactEventRe.Mouse.t => unit)? =>
+    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
+    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
+    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
+    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
+    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
+    onDrag::(ReactEventRe.Mouse.t => unit)? =>
+    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
+    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
+    onClick::(ReactEventRe.Mouse.t => unit)? =>
+    insideTree::bool? =>
+    clipped::bool? =>
+    className::string? =>
+    active::bool? =>
+    array ReasonReact.reactElement =>
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };

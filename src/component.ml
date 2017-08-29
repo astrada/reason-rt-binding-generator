@@ -1,5 +1,10 @@
 module Type =
 struct
+  type enum = {
+    name: string;
+    values: string list;
+  }
+
   type t =
     | String
     | Bool
@@ -23,6 +28,7 @@ struct
     | Element
     | Style
     | Object
+    | Enum of enum
     | Option of t
     | Array of t
 
@@ -70,12 +76,17 @@ struct
     | GenericCallback -> "(ReactEventRe.Synthetic.t => unit)"
     | Element -> "ReasonReact.reactElement"
     | Style -> "ReactDOMRe.style"
-    | Object -> "Js.t {..}"
-    | Option t -> "option " ^ (to_string t)
-    | Array t -> "array " ^ (to_string t)
+    | Object -> "(Js.t {..})"
+    | Enum { name; _ } -> name ^ ".t"
+    | Option t -> "(option " ^ (to_string t) ^ ")"
+    | Array t -> "(array " ^ (to_string t) ^ ")"
 
   let is_option = function
     | Option _ -> true
+    | _ -> false
+
+  let is_enum = function
+    | Enum _ -> true
     | _ -> false
 
 end
