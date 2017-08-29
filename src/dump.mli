@@ -1,0 +1,1 @@
+val dump : 'a -> string

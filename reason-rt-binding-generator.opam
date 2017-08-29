@@ -1,0 +1,16 @@
+opam-version: "1.2"
+version: "0.1"
+maintainer: "Alessandro Strada <alessandro.strada@gmail.com>"
+authors: [ "Alessandro Strada" ]
+homepage: "https://github.com/astrada/reason-rt-binding-generator"
+bug-reports: "https://github.com/astrada/reason-rt-binding-generator/issues"
+dev-repo: "https://github.com/astrada/reason-rt-binding-generator.git"
+license: "MIT"
+build: [
+  ["jbuilder" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "jbuilder" {build}
+  "yojson"
+]
+available: ocaml-version >= "4.02.3"

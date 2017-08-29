@@ -1,0 +1,16 @@
+{
+  "name": "reason-rt-binding-generator",
+  "version": "0.0.1",
+  "description": "Reason binding generator for react-toolbox",
+  "license": "MIT",
+  "scripts": {
+    "typedoc": "typedoc -options typedoc.json -json output/react-toolbox.typedoc.json node_modules/react-toolbox/src/components/",
+    "refmt": "refmt --in-place output/reactToolbox.re output/reactToolbox.rei"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.5",
+    "react-toolbox": "^2.0.0-beta.12",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.4.2"
+  }
+}

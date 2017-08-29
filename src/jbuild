@@ -1,0 +1,14 @@
+(jbuild_version 1)
+
+(executables
+ ((names (generator))
+  (libraries (str yojson))))
+
+(install
+ ((section bin)
+  (files ((generator.exe as reason-rt-binding-generator)))))
+
+(alias
+ ((name runtest)
+  (deps (generator.exe))
+  (action (run ${<}))))
