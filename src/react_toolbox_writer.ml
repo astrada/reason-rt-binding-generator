@@ -79,9 +79,12 @@ let build_js_props properties =
           (convert t "x") property_name
       | Array _ ->
         property_name
+      | Union _ ->
+        "unwrapValue " ^ property_name
       | Option (Bool as t)
       | Option (Date as t)
-      | Option ((Enum _) as t) ->
+      | Option ((Enum _) as t)
+      | Option ((Union _) as t) ->
         Printf.sprintf
           "Js.Null_undefined.from_opt (optionMap %s)"
           (convert t property_name)
@@ -116,13 +119,22 @@ let write_component_implementation oc component =
 let write_re path component_list =
   let oc = open_out path in
   Printf.fprintf oc
-    "let optionMap fn option => \
+    "type jsUnsafe;\n\
+     external toJsUnsafe : 'a => jsUnsafe = \"%%identity\";\n\
+     let unwrapValue = \
+     fun \
+     | `String s => toJsUnsafe s \
+     | `Bool b => toJsUnsafe b \
+     | `Float f => toJsUnsafe f \
+     | `Callback c => toJsUnsafe c \
+     | `Element e => toJsUnsafe e \
+     | `Object o => toJsUnsafe o;\n\
+     let optionMap fn option => \
      switch option { \
      | Some value => Some (fn value) \
      | None => None \
-     };\n\n";
-  Printf.fprintf oc
-    "module ThemeProvider = {\n\
+     };\n\n\
+     module ThemeProvider = {\n\
      type theme;\n\
      external themeProvider : ReasonReact.reactClass =\
        \"ThemeProvider\" [@@bs.module \"react-css-themr/lib/index\"];\n\

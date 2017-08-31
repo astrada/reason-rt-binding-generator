@@ -1,3 +1,16 @@
+type jsUnsafe;
+
+external toJsUnsafe : 'a => jsUnsafe = "%identity";
+
+let unwrapValue =
+  fun
+  | `String s => toJsUnsafe s
+  | `Bool b => toJsUnsafe b
+  | `Float f => toJsUnsafe f
+  | `Callback c => toJsUnsafe c
+  | `Element e => toJsUnsafe e
+  | `Object o => toJsUnsafe o;
+
 let optionMap fn option =>
   switch option {
   | Some value => Some (fn value)
@@ -308,7 +321,7 @@ module DatePicker = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/date_picker/DatePicker"];
   let make
-      value::(value: option (Js.t {..}))=?
+      value::(value: option [ | `Float float | `String string])=?
       theme::(theme: option (Js.t {..}))=?
       sundayFirstDayOfWeek::(sundayFirstDayOfWeek: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -360,7 +373,7 @@ module DatePicker = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "value": Js.Null_undefined.from_opt value,
+        "value": Js.Null_undefined.from_opt (optionMap unwrapValue value),
         "theme": Js.Null_undefined.from_opt theme,
         "sundayFirstDayOfWeek":
           Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean sundayFirstDayOfWeek),
@@ -2318,7 +2331,7 @@ module ListItemLayout = {
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
       selectable::(selectable: option bool)=?
-      rightIcon::(rightIcon: option (Js.t {..}))=?
+      rightIcon::(rightIcon: option [ | `String string | `Element ReasonReact.reactElement])=?
       rightActions::(rightActions: option (array ReasonReact.reactElement))=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
@@ -2343,13 +2356,13 @@ module ListItemLayout = {
       onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       legend::(legend: option string)=?
-      leftIcon::(leftIcon: option (Js.t {..}))=?
+      leftIcon::(leftIcon: option [ | `String string | `Element ReasonReact.reactElement])=?
       leftActions::(leftActions: option (array ReasonReact.reactElement))=?
       itemContent::(itemContent: option (Js.t {..}))=?
       disabled::(disabled: option bool)=?
       className::(className: option string)=?
       caption::(caption: option string)=?
-      avatar::(avatar: option (Js.t {..}))=?
+      avatar::(avatar: option [ | `String string | `Element ReasonReact.reactElement])=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
@@ -2358,7 +2371,7 @@ module ListItemLayout = {
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,
         "selectable": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean selectable),
-        "rightIcon": Js.Null_undefined.from_opt rightIcon,
+        "rightIcon": Js.Null_undefined.from_opt (optionMap unwrapValue rightIcon),
         "rightActions": Js.Null_undefined.from_opt rightActions,
         "onTouchStart": Js.Null_undefined.from_opt onTouchStart,
         "onTouchMove": Js.Null_undefined.from_opt onTouchMove,
@@ -2383,13 +2396,13 @@ module ListItemLayout = {
         "onContextMenu": Js.Null_undefined.from_opt onContextMenu,
         "onClick": Js.Null_undefined.from_opt onClick,
         "legend": Js.Null_undefined.from_opt legend,
-        "leftIcon": Js.Null_undefined.from_opt leftIcon,
+        "leftIcon": Js.Null_undefined.from_opt (optionMap unwrapValue leftIcon),
         "leftActions": Js.Null_undefined.from_opt leftActions,
         "itemContent": Js.Null_undefined.from_opt itemContent,
         "disabled": Js.Null_undefined.from_opt (optionMap Js.Boolean.to_js_boolean disabled),
         "className": Js.Null_undefined.from_opt className,
         "caption": Js.Null_undefined.from_opt caption,
-        "avatar": Js.Null_undefined.from_opt avatar
+        "avatar": Js.Null_undefined.from_opt (optionMap unwrapValue avatar)
       }
       children;
 };
@@ -3653,7 +3666,7 @@ module Dropdown = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/dropdown/Dropdown"];
   let make
-      value::(value: option (Js.t {..}))=?
+      value::(value: option [ | `String string | `Float float])=?
       theme::(theme: option (Js.t {..}))=?
       template::(template: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3695,7 +3708,7 @@ module Dropdown = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "value": Js.Null_undefined.from_opt value,
+        "value": Js.Null_undefined.from_opt (optionMap unwrapValue value),
         "theme": Js.Null_undefined.from_opt theme,
         "template": Js.Null_undefined.from_opt template,
         "style": Js.Null_undefined.from_opt style,

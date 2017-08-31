@@ -167,7 +167,23 @@ let build_properties props_json =
                  } in
                if is_optional then Component.Type.Option enum_type
                else enum_type
-             else Component.Type.map_type "intrinsic" "any" is_optional
+             else
+               try
+                 let mapped_types =
+                   List.map
+                     (fun union_type_json ->
+                        let type_category =
+                          union_type_json |> member "type" |> to_string in
+                        let type_name =
+                          union_type_json |> member "name" |> to_string in
+                        Component.Type.map_type type_category type_name false
+                     )
+                     union_types in
+                 let union_type = Component.Type.Union mapped_types in
+                 if is_optional then Component.Type.Option union_type
+                 else union_type
+               with _ ->
+                 Component.Type.map_type "intrinsic" "any" is_optional
            else if type_category = "intersection" then
              Component.Type.map_type "intrinsic" "any" is_optional
            else if type_category = "array" then

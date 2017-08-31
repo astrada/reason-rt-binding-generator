@@ -30,6 +30,7 @@ module Type : sig
     | Enum of enum
     | Option of t
     | Array of t
+    | Union of t list
 
   val is_callback: string -> string -> string -> bool
 

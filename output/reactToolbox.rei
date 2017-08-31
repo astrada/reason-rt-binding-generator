@@ -160,7 +160,7 @@ module ListItemActions: {
 
 module DatePicker: {
   let make:
-    value::Js.t {..}? =>
+    value::[ | `Float float | `String string]? =>
     theme::Js.t {..}? =>
     sundayFirstDayOfWeek::bool? =>
     style::ReactDOMRe.style? =>
@@ -1173,7 +1173,7 @@ module ListItemLayout: {
     theme::Js.t {..}? =>
     style::ReactDOMRe.style? =>
     selectable::bool? =>
-    rightIcon::Js.t {..}? =>
+    rightIcon::[ | `String string | `Element ReasonReact.reactElement]? =>
     rightActions::array ReasonReact.reactElement? =>
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
     onTouchMove::(ReactEventRe.Touch.t => unit)? =>
@@ -1198,13 +1198,13 @@ module ListItemLayout: {
     onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     legend::string? =>
-    leftIcon::Js.t {..}? =>
+    leftIcon::[ | `String string | `Element ReasonReact.reactElement]? =>
     leftActions::array ReasonReact.reactElement? =>
     itemContent::Js.t {..}? =>
     disabled::bool? =>
     className::string? =>
     caption::string? =>
-    avatar::Js.t {..}? =>
+    avatar::[ | `String string | `Element ReasonReact.reactElement]? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
 };
@@ -1845,7 +1845,7 @@ module Slider: {
 
 module Dropdown: {
   let make:
-    value::Js.t {..}? =>
+    value::[ | `String string | `Float float]? =>
     theme::Js.t {..}? =>
     template::Js.t {..}? =>
     style::ReactDOMRe.style? =>

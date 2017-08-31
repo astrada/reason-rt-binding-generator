@@ -31,6 +31,7 @@ struct
     | Enum of enum
     | Option of t
     | Array of t
+    | Union of t list
 
   let is_callback type_category type_name props_name =
     let is_name_valid =
@@ -45,6 +46,7 @@ struct
       match type_name with
       | "string" when type_category = "intrinsic" -> String
       | "boolean" when type_category = "intrinsic" -> Bool
+      | "ReactElement"
       | "React.ReactNode" when type_category = "reference" -> Element
       | "CSSProperties" when type_category = "reference" -> Style
       | "number" when type_category = "intrinsic" -> Number
@@ -53,6 +55,34 @@ struct
       | _ when type_category = "reference" -> Object
       | _ -> failwith ("map_type: " ^ type_name) in
     if is_optional then Option t else t
+
+  let to_polymorphic_variant = function
+    | String -> "`String"
+    | Bool -> "`Bool"
+    | Number
+    | Date -> "`Float"
+    | ClipboardCallback
+    | CompositionCallback
+    | KeyboardCallback
+    | FocusCallback
+    | FormCallback
+    | MouseCallback
+    | SelectionCallback
+    | TouchCallback
+    | UICallback
+    | WheelCallback
+    | MediaCallback
+    | ImageCallback
+    | AnimationCallback
+    | TransitionCallback
+    | GenericCallback -> "`Callback"
+    | Element -> "`Element"
+    | Style
+    | Object -> "`Object"
+    | Array _
+    | Enum _
+    | Option _
+    | Union _ -> failwith "Unsupported type in union"
 
   let rec to_string = function
     | String -> "string"
@@ -80,6 +110,10 @@ struct
     | Enum { name; _ } -> name ^ ".t"
     | Option t -> "(option " ^ (to_string t) ^ ")"
     | Array t -> "(array " ^ (to_string t) ^ ")"
+    | Union ts -> "[ | " ^ (String.concat " | " (
+        List.map
+          (fun t -> (to_polymorphic_variant t) ^ " " ^ (to_string t))
+          ts)) ^ "]"
 
   let is_option = function
     | Option _ -> true
