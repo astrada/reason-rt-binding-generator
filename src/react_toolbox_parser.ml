@@ -136,6 +136,21 @@ let build_properties props_json =
        let name = prop_json |> member "name" |> to_string in
        if prop_json |> member "kind" |> to_int = property_kind &&
           not (List.mem name Component.Property.props_blacklist) then
+         let comment_json =
+           [prop_json]
+           |> filter_member "comment" in
+         let short_text =
+           comment_json
+           |> filter_member "shortText"
+           |> filter_string in
+         let text =
+           comment_json
+           |> filter_member "text"
+           |> filter_string in
+         let comment = String.concat ""
+             [ String.concat "" short_text;
+               String.concat "" text
+             ] in
          let type_category =
            prop_json |> member "type" |> member "type" |> to_string in
          let is_optional =
@@ -144,46 +159,55 @@ let build_properties props_json =
            with Type_error _ -> false in
          let property_type =
            if type_category = "union" then
-             let union_types =
+             let union_types_json =
                [prop_json]
                |> filter_member "type"
                |> filter_member "types"
                |> flatten in
-             let is_enum =
-               let xs = union_types
+             let (has_string_literal, has_other_type) =
+               let xs = union_types_json
                         |> filter_member "type"
                         |> filter_string in
-               List.length xs > 0 &&
-               List.for_all (fun x -> x = "stringLiteral") xs in
-             if is_enum then
+               (List.length xs > 0 &&
+                List.exists (fun x -> x = "stringLiteral") xs,
+                List.length xs > 0 &&
+                List.exists (fun x -> x <> "stringLiteral") xs) in
+             let enum_type =
                let union_values =
-                 union_types
+                 union_types_json
                  |> filter_member "value"
                  |> filter_string in
-               let enum_type =
-                 Component.Type.Enum {
-                   Component.Type.name = String.capitalize_ascii name;
-                   values = union_values;
-                 } in
-               if is_optional then Component.Type.Option enum_type
-               else enum_type
-             else
-               try
-                 let mapped_types =
-                   List.map
-                     (fun union_type_json ->
-                        let type_category =
-                          union_type_json |> member "type" |> to_string in
-                        let type_name =
-                          union_type_json |> member "name" |> to_string in
-                        Component.Type.map_type type_category type_name false
-                     )
-                     union_types in
-                 let union_type = Component.Type.Union mapped_types in
-                 if is_optional then Component.Type.Option union_type
-                 else union_type
-               with _ ->
-                 Component.Type.map_type "intrinsic" "any" is_optional
+               Component.Type.Enum {
+                 Component.Type.name = String.capitalize_ascii name;
+                 values = union_values;
+               }
+             in
+             let mapped_types =
+               union_types_json
+               |> List.filter
+                 (fun union_type_json ->
+                    union_type_json |> member "name" <> `Null
+                 )
+               |> List.map
+                 (fun union_type_json ->
+                    let type_category =
+                      union_type_json |> member "type" |> to_string in
+                    let type_name =
+                      union_type_json |> member "name" |> to_string in
+                    Component.Type.map_type type_category type_name false
+                 )
+             in
+             let union_type =
+               match (has_string_literal, has_other_type) with
+               | true, false -> enum_type
+               | false, true -> Component.Type.Union mapped_types
+               | true, true -> Component.Type.Union
+                                 (enum_type :: mapped_types)
+               | false, false ->
+                 Component.Type.map_type "intrinsic" "any" false
+             in
+             if is_optional then Component.Type.Option union_type
+             else union_type
            else if type_category = "intersection" then
              Component.Type.map_type "intrinsic" "any" is_optional
            else if type_category = "array" then
@@ -210,6 +234,7 @@ let build_properties props_json =
          in
          { Component.Property.name;
            property_type;
+           comment;
          } :: props
        else
          props

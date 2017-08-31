@@ -159,6 +159,33 @@ module ListItemActions: {
 };
 
 module DatePicker: {
+  module Locale: {
+    type t =
+      | De
+      | No
+      | En
+      | Es
+      | Af
+      | Ar
+      | Be
+      | Bg
+      | Bn
+      | Bo
+      | Br
+      | Bs
+      | Ca
+      | Gl
+      | Eu
+      | Pt
+      | It
+      | Fr
+      | Ru
+      | Ua
+      | Zh_cn
+      | Zh_hk
+      | Zh_tw;
+    let to_string: t => string;
+  };
   let make:
     value::[ | `Float float | `String string]? =>
     theme::Js.t {..}? =>
@@ -196,7 +223,7 @@ module DatePicker: {
     name::string? =>
     minDate::float? =>
     maxDate::float? =>
-    locale::Js.t {..}? =>
+    locale::[ | `Enum Locale.t | `Object (Js.t {..})]? =>
     label::string? =>
     inputFormat::Js.t {..}? =>
     inputClassName::string? =>
@@ -1888,8 +1915,15 @@ module Dropdown: {
 };
 
 module Dialog: {
+  module Type: {
+    type t =
+      | Small
+      | Normal
+      | Large;
+    let to_string: t => string;
+  };
   let make:
-    _type::Js.t {..}? =>
+    _type::[ | `Enum Type.t | `String string]? =>
     title::string? =>
     theme::Js.t {..}? =>
     style::ReactDOMRe.style? =>

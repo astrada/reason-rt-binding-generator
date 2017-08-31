@@ -79,8 +79,8 @@ struct
     | Element -> "`Element"
     | Style
     | Object -> "`Object"
+    | Enum _ -> "`Enum"
     | Array _
-    | Enum _
     | Option _
     | Union _ -> failwith "Unsupported type in union"
 
@@ -130,6 +130,7 @@ struct
   type t = {
     name: string;
     property_type: Type.t;
+    comment: string;
   }
 
   let props_blacklist = ["key"; "children"]

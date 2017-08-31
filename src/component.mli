@@ -48,6 +48,7 @@ module Property : sig
   type t = {
     name: string;
     property_type: Type.t;
+    comment: string;
   }
   
   val props_blacklist: string list

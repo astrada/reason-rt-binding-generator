@@ -9,7 +9,8 @@ let unwrapValue =
   | `Float f => toJsUnsafe f
   | `Callback c => toJsUnsafe c
   | `Element e => toJsUnsafe e
-  | `Object o => toJsUnsafe o;
+  | `Object o => toJsUnsafe o
+  | `Enum e => assert false;
 
 let optionMap fn option =>
   switch option {
@@ -320,6 +321,57 @@ module ListItemActions = {
 module DatePicker = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/date_picker/DatePicker"];
+  module Locale = {
+    type t =
+      | De
+      | No
+      | En
+      | Es
+      | Af
+      | Ar
+      | Be
+      | Bg
+      | Bn
+      | Bo
+      | Br
+      | Bs
+      | Ca
+      | Gl
+      | Eu
+      | Pt
+      | It
+      | Fr
+      | Ru
+      | Ua
+      | Zh_cn
+      | Zh_hk
+      | Zh_tw;
+    let to_string =
+      fun
+      | De => "de"
+      | No => "no"
+      | En => "en"
+      | Es => "es"
+      | Af => "af"
+      | Ar => "ar"
+      | Be => "be"
+      | Bg => "bg"
+      | Bn => "bn"
+      | Bo => "bo"
+      | Br => "br"
+      | Bs => "bs"
+      | Ca => "ca"
+      | Gl => "gl"
+      | Eu => "eu"
+      | Pt => "pt"
+      | It => "it"
+      | Fr => "fr"
+      | Ru => "ru"
+      | Ua => "ua"
+      | Zh_cn => "zh-cn"
+      | Zh_hk => "zh-hk"
+      | Zh_tw => "zh-tw";
+  };
   let make
       value::(value: option [ | `Float float | `String string])=?
       theme::(theme: option (Js.t {..}))=?
@@ -357,7 +409,7 @@ module DatePicker = {
       name::(name: option string)=?
       minDate::(minDate: option float)=?
       maxDate::(maxDate: option float)=?
-      locale::(locale: option (Js.t {..}))=?
+      locale::(locale: option [ | `Enum Locale.t | `Object (Js.t {..})])=?
       label::(label: option string)=?
       inputFormat::(inputFormat: option (Js.t {..}))=?
       inputClassName::(inputClassName: option string)=?
@@ -410,7 +462,16 @@ module DatePicker = {
         "name": Js.Null_undefined.from_opt name,
         "minDate": Js.Null_undefined.from_opt (optionMap Js.Date.fromFloat minDate),
         "maxDate": Js.Null_undefined.from_opt (optionMap Js.Date.fromFloat maxDate),
-        "locale": Js.Null_undefined.from_opt locale,
+        "locale":
+          Js.Null_undefined.from_opt (
+            optionMap
+              (
+                fun
+                | `Enum e => unwrapValue (`String (Locale.to_string e))
+                | x => unwrapValue x
+              )
+              locale
+          ),
         "label": Js.Null_undefined.from_opt label,
         "inputFormat": Js.Null_undefined.from_opt inputFormat,
         "inputClassName": Js.Null_undefined.from_opt inputClassName,
@@ -3753,8 +3814,19 @@ module Dropdown = {
 module Dialog = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/dialog/Dialog"];
+  module Type = {
+    type t =
+      | Small
+      | Normal
+      | Large;
+    let to_string =
+      fun
+      | Small => "small"
+      | Normal => "normal"
+      | Large => "large";
+  };
   let make
-      _type::(_type: option (Js.t {..}))=?
+      _type::(_type: option [ | `Enum Type.t | `String string])=?
       title::(title: option string)=?
       theme::(theme: option (Js.t {..}))=?
       style::(style: option ReactDOMRe.style)=?
@@ -3792,7 +3864,16 @@ module Dialog = {
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
-        "type": Js.Null_undefined.from_opt _type,
+        "type":
+          Js.Null_undefined.from_opt (
+            optionMap
+              (
+                fun
+                | `Enum e => unwrapValue (`String (Type.to_string e))
+                | x => unwrapValue x
+              )
+              _type
+          ),
         "title": Js.Null_undefined.from_opt title,
         "theme": Js.Null_undefined.from_opt theme,
         "style": Js.Null_undefined.from_opt style,

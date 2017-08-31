@@ -4,9 +4,15 @@ let clean_parameter_name name =
   else name
 
 let clean_variant_value value =
-  let regex = Str.regexp "[A-Za-z]" in
-  if not (Str.string_match regex value 0) then "V_" ^ value
-  else String.capitalize_ascii value
+  let replace s =
+    let invalid_char_regex = Str.regexp "-" in
+    Str.global_replace invalid_char_regex "_" s
+  in
+  let clean_value = replace value in
+  let starts_with_letter_regex = Str.regexp "^[A-Za-z]" in
+  if not (Str.string_match starts_with_letter_regex value 0)
+  then "V_" ^ clean_value
+  else String.capitalize_ascii clean_value
 
 let build_enum_type_declaration values =
   values
@@ -17,13 +23,16 @@ let get_enums properties =
   properties
   |> List.map
     (fun x ->
-       match x.Component.Property.property_type with
-       | Option t
-       | Array t -> t
-       | _ as t -> t
+       let ts =
+         match x.Component.Property.property_type with
+         | Option (Union ts) -> ts
+         | Option t
+         | Array t -> [t]
+         | Union ts -> ts
+         | _ as t -> [t] in
+       List.filter Component.Type.is_enum ts
     )
-  |> List.filter
-    (fun x -> Component.Type.is_enum x)
+  |> List.concat
 
 let write_enum_implementations oc properties =
   let build_to_string values =
@@ -79,6 +88,16 @@ let build_js_props properties =
           (convert t "x") property_name
       | Array _ ->
         property_name
+      | Union ts when List.exists Component.Type.is_enum ts ->
+        let enum = ts
+          |> List.filter Component.Type.is_enum
+          |> List.map (function Enum e -> e | _ -> assert false)
+          |> List.hd in
+        Printf.sprintf
+          "(fun | `Enum e => unwrapValue (`String (%s.to_string e)) | \
+           x => unwrapValue x) %s"
+          enum.Component.Type.name
+          property_name
       | Union _ ->
         "unwrapValue " ^ property_name
       | Option (Bool as t)
@@ -128,7 +147,8 @@ let write_re path component_list =
      | `Float f => toJsUnsafe f \
      | `Callback c => toJsUnsafe c \
      | `Element e => toJsUnsafe e \
-     | `Object o => toJsUnsafe o;\n\
+     | `Object o => toJsUnsafe o\n\
+     | `Enum e => assert false;\n\
      let optionMap fn option => \
      switch option { \
      | Some value => Some (fn value) \
@@ -174,11 +194,35 @@ let write_enum_signatures oc properties =
     )
     enums
 
+let build_comment properties =
+  let comments =
+    properties
+    |> List.filter (fun c -> c.Component.Property.comment <> "")
+    |> List.map
+      (fun c ->
+         Printf.sprintf "%s: %s"
+           c.Component.Property.name
+           c.Component.Property.comment
+      )
+      in
+  String.concat "\n" comments
+
 let write_component_signature oc component =
   Printf.fprintf oc
     "module %s: {\n"
     component.Component.name;
   write_enum_signatures oc component.Component.properties;
+  (* TODO: check if comments get messed up by refmt?
+  Printf.fprintf oc
+    "/**\n\
+      %s\n\
+      */\n\
+     let make: %s => array ReasonReact.reactElement => \
+       ReasonReact.component ReasonReact.stateless \
+       ReasonReact.noRetainedProps;\n};\n"
+    (build_comment component.Component.properties)
+    (build_props_arg_type component.Component.properties)
+  *)
   Printf.fprintf oc
     "let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
