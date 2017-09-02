@@ -3,7 +3,7 @@ module ThemeProvider: {
   let make:
     theme::theme =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module IconMenu: {
@@ -53,7 +53,7 @@ module IconMenu: {
     icon::ReasonReact.reactElement? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListItemText: {
@@ -85,7 +85,7 @@ module ListItemText: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Overlay: {
@@ -97,7 +97,7 @@ module Overlay: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Snackbar: {
@@ -141,7 +141,7 @@ module Snackbar: {
     active::bool? =>
     action::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListItemActions: {
@@ -155,7 +155,7 @@ module ListItemActions: {
     _type::Type.t? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module DatePicker: {
@@ -236,7 +236,7 @@ module DatePicker: {
     autoOk::bool? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module TableHead: {
@@ -272,7 +272,7 @@ module TableHead: {
     displaySelect::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListItemContent: {
@@ -289,7 +289,7 @@ module ListItemContent: {
     legend::string? =>
     caption::ReasonReact.reactElement? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module RadioButton: {
@@ -328,7 +328,7 @@ module RadioButton: {
     className::string? =>
     checked::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module List: {
@@ -361,7 +361,7 @@ module List: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Chip: {
@@ -394,7 +394,7 @@ module Chip: {
     deletable::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module BrowseButton: {
@@ -439,7 +439,7 @@ module BrowseButton: {
     className::string? =>
     accent::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module IconButton: {
@@ -479,7 +479,7 @@ module IconButton: {
     className::string? =>
     accent::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Navigation: {
@@ -519,7 +519,7 @@ module Navigation: {
     className::string? =>
     actions::array (Js.t {..})? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Switch: {
@@ -557,7 +557,7 @@ module Switch: {
     className::string? =>
     checked::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListSubHeader: {
@@ -589,7 +589,7 @@ module ListSubHeader: {
     className::string? =>
     caption::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Avatar: {
@@ -624,7 +624,7 @@ module Avatar: {
     cover::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListCheckbox: {
@@ -663,7 +663,7 @@ module ListCheckbox: {
     checked::bool? =>
     caption::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module MenuDivider: {
@@ -694,7 +694,7 @@ module MenuDivider: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module TableRow: {
@@ -729,7 +729,7 @@ module TableRow: {
     idx::float? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module CardTitle: {
@@ -763,7 +763,7 @@ module CardTitle: {
     className::string? =>
     avatar::ReasonReact.reactElement? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module RadioGroup: {
@@ -797,7 +797,7 @@ module RadioGroup: {
     disabled::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Button: {
@@ -842,7 +842,7 @@ module Button: {
     className::string? =>
     accent::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module CardText: {
@@ -873,7 +873,7 @@ module CardText: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Card: {
@@ -905,7 +905,7 @@ module Card: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module AppBar: {
@@ -944,7 +944,7 @@ module AppBar: {
     fixed::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Autocomplete: {
@@ -1026,7 +1026,7 @@ module Autocomplete: {
     className::string? =>
     allowCreate::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module TableCell: {
@@ -1074,7 +1074,7 @@ module TableCell: {
     column::float? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Menu: {
@@ -1124,7 +1124,7 @@ module Menu: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module CardActions: {
@@ -1155,7 +1155,7 @@ module CardActions: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module MenuItem: {
@@ -1191,7 +1191,7 @@ module MenuItem: {
     className::string? =>
     caption::string =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListItemLayout: {
@@ -1233,7 +1233,7 @@ module ListItemLayout: {
     caption::string? =>
     avatar::[ | `String string | `Element ReasonReact.reactElement]? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Link: {
@@ -1269,7 +1269,7 @@ module Link: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListDivider: {
@@ -1301,7 +1301,7 @@ module ListDivider: {
     inset::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Portal: {
@@ -1333,7 +1333,7 @@ module Portal: {
     container::Js.t {..}? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Tabs: {
@@ -1376,7 +1376,7 @@ module Tabs: {
     disableAnimatedBottomBorder::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Table: {
@@ -1410,7 +1410,7 @@ module Table: {
     multiSelectable::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Panel: {
@@ -1442,7 +1442,7 @@ module Panel: {
     className::string? =>
     bodyScroll::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ProgressBar: {
@@ -1493,7 +1493,7 @@ module ProgressBar: {
     className::string? =>
     buffer::float? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module CardMedia: {
@@ -1534,7 +1534,7 @@ module CardMedia: {
     className::string? =>
     aspectRatio::AspectRatio.t? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Checkbox: {
@@ -1571,7 +1571,7 @@ module Checkbox: {
     className::string? =>
     checked::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Drawer: {
@@ -1613,7 +1613,7 @@ module Drawer: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Tab: {
@@ -1651,7 +1651,7 @@ module Tab: {
     activeClassName::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Input: {
@@ -1701,7 +1701,7 @@ module Input: {
     disabled::bool? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Layout: {
@@ -1732,7 +1732,7 @@ module Layout: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module TimePicker: {
@@ -1761,7 +1761,7 @@ module TimePicker: {
     cancelLabel::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module TabContent: {
@@ -1794,7 +1794,7 @@ module TabContent: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module FontIcon: {
@@ -1825,7 +1825,7 @@ module FontIcon: {
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     className::string? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Slider: {
@@ -1867,7 +1867,7 @@ module Slider: {
     className::string? =>
     buffer::float? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Dropdown: {
@@ -1911,7 +1911,7 @@ module Dropdown: {
     auto::bool? =>
     allowBlank::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Dialog: {
@@ -1958,7 +1958,7 @@ module Dialog: {
     active::bool? =>
     actions::array (Js.t {..})? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module ListItemAction: {
@@ -1966,7 +1966,7 @@ module ListItemAction: {
     theme::Js.t {..}? =>
     action::ReasonReact.reactElement? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module NavDrawer: {
@@ -2023,7 +2023,7 @@ module NavDrawer: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
 
 module Sidebar: {
@@ -2081,5 +2081,5 @@ module Sidebar: {
     className::string? =>
     active::bool? =>
     array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps;
+    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
