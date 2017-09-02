@@ -5,12 +5,12 @@ external toJsUnsafe : 'a => jsUnsafe = "%identity";
 let unwrapValue =
   fun
   | `String s => toJsUnsafe s
-  | `Bool b => toJsUnsafe b
+  | `Bool b => toJsUnsafe (Js.Boolean.to_js_boolean b)
   | `Float f => toJsUnsafe f
   | `Callback c => toJsUnsafe c
   | `Element e => toJsUnsafe e
   | `Object o => toJsUnsafe o
-  | `Enum e => assert false;
+  | `Enum _ => assert false;
 
 let optionMap fn option =>
   switch option {

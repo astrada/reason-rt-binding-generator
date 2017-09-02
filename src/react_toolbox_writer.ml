@@ -143,12 +143,12 @@ let write_re path component_list =
      let unwrapValue = \
      fun \
      | `String s => toJsUnsafe s \
-     | `Bool b => toJsUnsafe b \
+     | `Bool b => toJsUnsafe (Js.Boolean.to_js_boolean b) \
      | `Float f => toJsUnsafe f \
      | `Callback c => toJsUnsafe c \
      | `Element e => toJsUnsafe e \
-     | `Object o => toJsUnsafe o\n\
-     | `Enum e => assert false;\n\
+     | `Object o => toJsUnsafe o \
+     | `Enum _ => assert false;\n\
      let optionMap fn option => \
      switch option { \
      | Some value => Some (fn value) \
@@ -219,14 +219,14 @@ let write_component_signature oc component =
       */\n\
      let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps;\n};\n"
+       ReasonReact.noRetainedProps ReasonReact.actionless;\n};\n"
     (build_comment component.Component.properties)
     (build_props_arg_type component.Component.properties)
   *)
   Printf.fprintf oc
     "let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps;\n};\n"
+       ReasonReact.noRetainedProps ReasonReact.actionless;\n};\n"
     (build_props_arg_type component.Component.properties)
 
 let write_rei path component_list =
@@ -236,7 +236,7 @@ let write_rei path component_list =
      type theme;\n\
      let make: theme::theme => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps;\n\
+       ReasonReact.noRetainedProps ReasonReact.actionless;\n\
      };\n";
   List.iter (write_component_signature oc) component_list;
   close_out oc
