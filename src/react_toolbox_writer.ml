@@ -124,14 +124,16 @@ let build_js_props properties =
   let prop_strings = List.map prop_to_string properties in
   String.concat ", " prop_strings
 
-let write_component_implementation oc component =
+let write_component_implementation bundled oc component =
   let module_path = component.Component.module_path in
-  let bundled_module_path =
-    let last_slash_index =
-      try
-        String.rindex module_path '/'
-      with Not_found -> String.length module_path in
-    String.sub module_path 0 last_slash_index in
+  let external_module_path =
+    if bundled && has_theme_property component.Component.properties then
+      let last_slash_index =
+        try
+          String.rindex module_path '/'
+        with Not_found -> String.length module_path in
+      String.sub module_path 0 last_slash_index
+    else module_path in
   Printf.fprintf oc
     "module %s = {\n"
     component.Component.name;
@@ -141,26 +143,12 @@ let write_component_implementation oc component =
        [@@bs.module \"%s\"];\n\
      let make %s children => \n\
        ReasonReact.wrapJsForReason \
-       ::reactClass props::{%s} children;\n"
-    component.Component.module_path
+       ::reactClass props::{%s} children;\n};\n"
+    external_module_path
     (build_props_arg component.Component.properties)
-    (build_js_props component.Component.properties);
-  if has_theme_property component.Component.properties then begin
-    Printf.fprintf oc
-      "module Bundled = {\n\
-         external reactClass : ReasonReact.reactClass = \"default\" \
-           [@@bs.module \"%s\"];\n\
-         let make %s children => \n\
-           ReasonReact.wrapJsForReason \
-           ::reactClass props::{%s} children;\n\
-       };\n"
-      bundled_module_path
-      (build_props_arg component.Component.properties)
-      (build_js_props component.Component.properties);
-  end;
-  Printf.fprintf oc "};\n"
+    (build_js_props component.Component.properties)
 
-let write_re path component_list =
+let write_re ~bundled path component_list =
   let oc = open_out path in
   Printf.fprintf oc
     "type jsUnsafe;\n\
@@ -178,16 +166,19 @@ let write_re path component_list =
      switch option { \
      | Some value => Some (fn value) \
      | None => None \
-     };\n\n\
-     module ThemeProvider = {\n\
-     type theme;\n\
-     external themeProvider : ReasonReact.reactClass =\
+     };\n\n";
+  if not bundled then begin
+    Printf.fprintf oc
+      "module ThemeProvider = {\n\
+       type theme;\n\
+       external themeProvider : ReasonReact.reactClass =\
        \"ThemeProvider\" [@@bs.module \"react-css-themr/lib/index\"];\n\
-     let make theme::(theme: theme) children =>\
-     ReasonReact.wrapJsForReason \
+       let make theme::(theme: theme) children =>\
+       ReasonReact.wrapJsForReason \
        reactClass::themeProvider props::{\"theme\": theme} children;\n\
-     };\n";
-  List.iter (write_component_implementation oc) component_list;
+       };\n";
+  end;
+  List.iter (write_component_implementation bundled oc) component_list;
   close_out oc
 
 let build_props_arg_type properties =
@@ -251,27 +242,20 @@ let write_component_signature oc component =
   Printf.fprintf oc
     "let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps ReasonReact.actionless;\n"
-    (build_props_arg_type component.Component.properties);
-  if has_theme_property component.Component.properties then begin
-    Printf.fprintf oc
-      "module Bundled: {\n\
-         let make: %s => array ReasonReact.reactElement => \
-           ReasonReact.component ReasonReact.stateless \
-         ReasonReact.noRetainedProps ReasonReact.actionless;\n};"
-      (build_props_arg_type component.Component.properties)
-  end;
-  Printf.fprintf oc "};\n"
+       ReasonReact.noRetainedProps ReasonReact.actionless;\n};\n"
+    (build_props_arg_type component.Component.properties)
 
-let write_rei path component_list =
+let write_rei ~bundled path component_list =
   let oc = open_out path in
-  Printf.fprintf oc
-    "module ThemeProvider: {\n\
-     type theme;\n\
-     let make: theme::theme => array ReasonReact.reactElement => \
-       ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps ReasonReact.actionless;\n\
-     };\n";
+  if not bundled then begin
+    Printf.fprintf oc
+      "module ThemeProvider: {\n\
+       type theme;\n\
+       let make: theme::theme => array ReasonReact.reactElement => \
+         ReasonReact.component ReasonReact.stateless \
+         ReasonReact.noRetainedProps ReasonReact.actionless;\n\
+       };\n";
+  end;
   List.iter (write_component_signature oc) component_list;
   close_out oc
 

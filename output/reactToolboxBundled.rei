@@ -1,11 +1,3 @@
-module ThemeProvider: {
-  type theme;
-  let make:
-    theme::theme =>
-    array ReasonReact.reactElement =>
-    ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
-};
-
 module IconMenu: {
   module Position: {
     type t =

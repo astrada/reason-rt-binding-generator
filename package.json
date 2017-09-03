@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "typedoc": "typedoc -options typedoc.json -json output/react-toolbox.typedoc.json node_modules/react-toolbox/src/components/",
-    "refmt": "refmt --in-place output/reactToolbox.re output/reactToolbox.rei"
+    "refmt": "refmt --in-place output/*.re*"
   },
   "devDependencies": {
     "@types/react": "^16.0.5",
