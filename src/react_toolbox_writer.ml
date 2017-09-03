@@ -1,3 +1,6 @@
+let has_theme_property properties =
+  List.exists (fun p -> p.Component.Property.name = "theme") properties
+
 let clean_parameter_name name =
   let keywords = ["type"; "to"] in
   if List.mem name keywords then "_" ^ name
@@ -122,18 +125,40 @@ let build_js_props properties =
   String.concat ", " prop_strings
 
 let write_component_implementation oc component =
+  let module_path = component.Component.module_path in
+  let bundled_module_path =
+    let last_slash_index =
+      try
+        String.rindex module_path '/'
+      with Not_found -> String.length module_path in
+    String.sub module_path 0 last_slash_index in
   Printf.fprintf oc
-    "module %s = {\n\
-     external reactClass : ReasonReact.reactClass = \"default\" \
-       [@@bs.module \"%s\"];\n"
-    component.Component.name
-    component.Component.module_path;
+    "module %s = {\n"
+    component.Component.name;
   write_enum_implementations oc component.Component.properties;
   Printf.fprintf oc
-    "let make %s children => ReasonReact.wrapJsForReason \
-       ::reactClass props::{%s} children;\n};\n"
+    "external reactClass : ReasonReact.reactClass = \"default\" \
+       [@@bs.module \"%s\"];\n\
+     let make %s children => \n\
+       ReasonReact.wrapJsForReason \
+       ::reactClass props::{%s} children;\n"
+    component.Component.module_path
     (build_props_arg component.Component.properties)
-    (build_js_props component.Component.properties)
+    (build_js_props component.Component.properties);
+  if has_theme_property component.Component.properties then begin
+    Printf.fprintf oc
+      "module Bundled = {\n\
+         external reactClass : ReasonReact.reactClass = \"default\" \
+           [@@bs.module \"%s\"];\n\
+         let make %s children => \n\
+           ReasonReact.wrapJsForReason \
+           ::reactClass props::{%s} children;\n\
+       };\n"
+      bundled_module_path
+      (build_props_arg component.Component.properties)
+      (build_js_props component.Component.properties);
+  end;
+  Printf.fprintf oc "};\n"
 
 let write_re path component_list =
   let oc = open_out path in
@@ -226,8 +251,17 @@ let write_component_signature oc component =
   Printf.fprintf oc
     "let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps ReasonReact.actionless;\n};\n"
-    (build_props_arg_type component.Component.properties)
+       ReasonReact.noRetainedProps ReasonReact.actionless;\n"
+    (build_props_arg_type component.Component.properties);
+  if has_theme_property component.Component.properties then begin
+    Printf.fprintf oc
+      "module Bundled: {\n\
+         let make: %s => array ReasonReact.reactElement => \
+           ReasonReact.component ReasonReact.stateless \
+         ReasonReact.noRetainedProps ReasonReact.actionless;\n};"
+      (build_props_arg_type component.Component.properties)
+  end;
+  Printf.fprintf oc "};\n"
 
 let write_rei path component_list =
   let oc = open_out path in
