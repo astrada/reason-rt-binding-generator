@@ -59,8 +59,8 @@ struct
   let to_polymorphic_variant = function
     | String -> "`String"
     | Bool -> "`Bool"
-    | Number
-    | Date -> "`Float"
+    | Number -> "`Float"
+    | Date -> "`Date"
     | ClipboardCallback
     | CompositionCallback
     | KeyboardCallback
@@ -87,8 +87,8 @@ struct
   let rec to_string = function
     | String -> "string"
     | Bool -> "bool"
-    | Number
-    | Date -> "float"
+    | Number -> "float"
+    | Date -> "Js.Date.t"
     | ClipboardCallback -> "(ReactEventRe.Clipboard.t => unit)"
     | CompositionCallback -> "(ReactEventRe.Composition.t => unit)"
     | KeyboardCallback -> "(ReactEventRe.Keyboard.t => unit)"

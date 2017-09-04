@@ -77,15 +77,13 @@ let build_js_props properties =
       match property_type with
       | Bool ->
         "Js.Boolean.to_js_boolean " ^ property_name
-      | Date ->
-        "Js.Date.fromFloat " ^ property_name
+      | Date
       | String
       | Object ->
         property_name
       | Enum { name; _ } ->
         Printf.sprintf "%s.to_string %s" name property_name
-      | Array (Bool as t)
-      | Array (Date as t) ->
+      | Array (Bool as t) ->
         Printf.sprintf
           "Array.map (fun x -> %s) %s"
           (convert t "x") property_name
@@ -104,7 +102,6 @@ let build_js_props properties =
       | Union _ ->
         "unwrapValue " ^ property_name
       | Option (Bool as t)
-      | Option (Date as t)
       | Option ((Enum _) as t)
       | Option ((Union _) as t) ->
         Printf.sprintf
@@ -158,6 +155,7 @@ let write_re ~bundled path component_list =
      | `String s => toJsUnsafe s \
      | `Bool b => toJsUnsafe (Js.Boolean.to_js_boolean b) \
      | `Float f => toJsUnsafe f \
+     | `Date d => toJsUnsafe d \
      | `Callback c => toJsUnsafe c \
      | `Element e => toJsUnsafe e \
      | `Object o => toJsUnsafe o \
