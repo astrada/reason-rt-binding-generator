@@ -257,25 +257,34 @@ let parse path =
       with Not_found -> String.length module_name in
     String.sub module_name quote_index (dot_index - quote_index)
   in
-  List.map
-    (fun component ->
-       let class_json = Hashtbl.find index component.class_id in
-       let module_json = Hashtbl.find index component.module_id in
-       let props_json = List.map (Hashtbl.find index) component.props_ids in
-       let open Yojson.Basic.Util in
-       let module_path = 
-         module_json
-         |> member "name"
-         |> to_string
-         |> clean_module_path in
-       {
-         Component.name =
-           class_json
+  let parsed_components =
+    List.map
+      (fun component ->
+         let class_json = Hashtbl.find index component.class_id in
+         let module_json = Hashtbl.find index component.module_id in
+         let props_json = List.map (Hashtbl.find index) component.props_ids in
+         let open Yojson.Basic.Util in
+         let module_path = 
+           module_json
            |> member "name"
-           |> to_string;
-         module_path = react_toolbox_base ^ module_path;
-         properties = List.map build_properties props_json |> List.concat;
-       }
-    )
-    components
+           |> to_string
+           |> clean_module_path in
+         let properties =
+           props_json
+           |> List.map build_properties
+           |> List.concat
+           |> List.sort compare in
+         {
+           Component.name =
+             class_json
+             |> member "name"
+             |> to_string;
+           module_path = react_toolbox_base ^ module_path;
+           properties;
+         }
+      )
+      components in
+  List.sort
+    (fun x y -> compare x.Component.name y.Component.name)
+    parsed_components
 
