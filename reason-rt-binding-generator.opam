@@ -1,5 +1,5 @@
 opam-version: "1.2"
-version: "0.1"
+version: "0.1.0"
 maintainer: "Alessandro Strada <alessandro.strada@gmail.com>"
 authors: [ "Alessandro Strada" ]
 homepage: "https://github.com/astrada/reason-rt-binding-generator"

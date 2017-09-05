@@ -1,8 +1,10 @@
 {
   "name": "reason-rt-binding-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reason binding generator for react-toolbox",
   "license": "MIT",
+  "repository": "https://github.com/astrada/reason-rt-binding-generator.git",
+  "author": "Alessandro Strada",
   "scripts": {
     "typedoc": "typedoc -options typedoc.json -json output/react-toolbox.typedoc.json node_modules/react-toolbox/src/components/",
     "refmt": "refmt --in-place output/*.re; refmt --in-place --interface=true output/reactToolbox.rei; refmt --in-place --interface=true output/reactToolboxBundled.rei"
