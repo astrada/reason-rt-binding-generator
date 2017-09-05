@@ -214,7 +214,7 @@ let build_comment properties =
     |> List.filter (fun c -> c.Component.Property.comment <> "")
     |> List.map
       (fun c ->
-         Printf.sprintf "%s: %s"
+         Printf.sprintf "@param %s %s"
            c.Component.Property.name
            c.Component.Property.comment
       )
@@ -226,17 +226,11 @@ let write_component_signature oc component =
     "module %s: {\n"
     component.Component.name;
   write_enum_signatures oc component.Component.properties;
-  (* TODO: check if comments get messed up by refmt?
   Printf.fprintf oc
-    "/**\n\
-      %s\n\
-      */\n\
-     let make: %s => array ReasonReact.reactElement => \
-       ReasonReact.component ReasonReact.stateless \
-       ReasonReact.noRetainedProps ReasonReact.actionless;\n};\n"
-    (build_comment component.Component.properties)
-    (build_props_arg_type component.Component.properties)
-  *)
+    "/** Component %s\n\
+      %s */\n"
+    component.Component.name
+    (build_comment component.Component.properties);
   Printf.fprintf oc
     "let make: %s => array ReasonReact.reactElement => \
        ReasonReact.component ReasonReact.stateless \
