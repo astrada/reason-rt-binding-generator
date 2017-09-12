@@ -35,30 +35,30 @@ module AppBar = {
       fixed::(fixed: option bool)=?
       flat::(flat: option bool)=?
       leftIcon::(leftIcon: option ReasonReact.reactElement)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onLeftIconClick::(onLeftIconClick: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onRightIconClick::(onRightIconClick: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onLeftIconClick::(onLeftIconClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onRightIconClick::(onRightIconClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       rightIcon::(rightIcon: option ReasonReact.reactElement)=?
       scrollHide::(scrollHide: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -158,35 +158,35 @@ module Autocomplete = {
       multiline::(multiline: option bool)=?
       multiple::(multiple: option bool)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onKeyDown::(onKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyPress::(onKeyPress: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyUp::(onKeyUp: option (ReactEventRe.Keyboard.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onQueryChange::(onQueryChange: option (ReactEventRe.Synthetic.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReactEventRe.Focus.t => string => unit))=?
+      onChange::(onChange: option ('value => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onKeyDown::(onKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyPress::(onKeyPress: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyUp::(onKeyUp: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onQueryChange::(onQueryChange: option (ReasonReact.Callback.t string))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       required::(required: option bool)=?
       rows::(rows: option float)=?
       selectedPosition::(selectedPosition: option SelectedPosition.t)=?
@@ -277,28 +277,28 @@ module Avatar = {
       cover::(cover: option bool)=?
       icon::(icon: option ReasonReact.reactElement)=?
       image::(image: option ReasonReact.reactElement)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       title::(title: option string)=?
@@ -354,28 +354,28 @@ module BrowseButton = {
       label::(label: option string)=?
       mini::(mini: option bool)=?
       neutral::(neutral: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       primary::(primary: option bool)=?
       raised::(raised: option bool)=?
       ripple::(ripple: option bool)=?
@@ -444,28 +444,28 @@ module Button = {
       label::(label: option string)=?
       mini::(mini: option bool)=?
       neutral::(neutral: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       primary::(primary: option bool)=?
       raised::(raised: option bool)=?
       ripple::(ripple: option bool)=?
@@ -524,28 +524,28 @@ module Card = {
     "default" [@@bs.module "react-toolbox/lib/card/Card"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       raised::(raised: option bool)=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
@@ -588,28 +588,28 @@ module CardActions = {
     "default" [@@bs.module "react-toolbox/lib/card/CardActions"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -663,28 +663,28 @@ module CardMedia = {
       color::(color: option string)=?
       contentOverlay::(contentOverlay: option bool)=?
       image::(image: option ReasonReact.reactElement)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -730,28 +730,28 @@ module CardText = {
     "default" [@@bs.module "react-toolbox/lib/card/CardText"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -793,28 +793,28 @@ module CardTitle = {
   let make
       avatar::(avatar: option ReasonReact.reactElement)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       subtitle::(subtitle: option ReasonReact.reactElement)=?
       theme::(theme: option (Js.t {..}))=?
@@ -864,30 +864,30 @@ module Checkbox = {
       disabled::(disabled: option bool)=?
       label::(label: option ReasonReact.reactElement)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option (Js.boolean => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -935,29 +935,29 @@ module Chip = {
   let make
       className::(className: option string)=?
       deletable::(deletable: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDeleteClick::(onDeleteClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDeleteClick::(onDeleteClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -1066,33 +1066,33 @@ module DatePicker = {
       minDate::(minDate: option Js.Date.t)=?
       name::(name: option string)=?
       okLabel::(okLabel: option string)=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDismiss::(onDismiss: option (ReactEventRe.Synthetic.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onEscKeyDown::(onEscKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyPress::(onKeyPress: option (ReactEventRe.Keyboard.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onChange::(onChange: option (Js.Date.t => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDismiss::(onDismiss: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onEscKeyDown::(onEscKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyPress::(onKeyPress: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       readonly::(readonly: option bool)=?
       style::(style: option ReactDOMRe.style)=?
       sundayFirstDayOfWeek::(sundayFirstDayOfWeek: option bool)=?
@@ -1182,33 +1182,35 @@ module Dialog = {
       actions::(actions: option (array (Js.t {..})))=?
       active::(active: option bool)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onEscKeyDown::(onEscKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayMouseDown::(onOverlayMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayMouseMove::(onOverlayMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayMouseUp::(onOverlayMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onEscKeyDown::(onEscKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayMouseDown::
+        (onOverlayMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayMouseMove::
+        (onOverlayMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayMouseUp::(onOverlayMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       title::(title: option string)=?
@@ -1280,29 +1282,29 @@ module Drawer = {
       active::(active: option bool)=?
       className::(className: option string)=?
       insideTree::(insideTree: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       _type::(_type: option Type.t)=?
@@ -1356,31 +1358,31 @@ module Dropdown = {
       error::(error: option string)=?
       label::(label: option string)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option ('value => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       required::(required: option bool)=?
       source::(source: array 'a)
       style::(style: option ReactDOMRe.style)=?
@@ -1438,28 +1440,28 @@ module FontIcon = {
     "default" [@@bs.module "react-toolbox/lib/font_icon/FontIcon"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       value::(value: option ReasonReact.reactElement)=?
       children =>
@@ -1506,28 +1508,28 @@ module IconButton = {
       icon::(icon: option ReasonReact.reactElement)=?
       inverse::(inverse: option bool)=?
       neutral::(neutral: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       primary::(primary: option bool)=?
       ripple::(ripple: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -1600,31 +1602,31 @@ module IconMenu = {
       icon::(icon: option ReasonReact.reactElement)=?
       iconRipple::(iconRipple: option bool)=?
       menuRipple::(menuRipple: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onHide::(onHide: option (ReactEventRe.Synthetic.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onSelect::(onSelect: option (ReactEventRe.Selection.t => unit))=?
-      onShow::(onShow: option (ReactEventRe.Synthetic.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onHide::(onHide: option (ReasonReact.Callback.t unit))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onSelect::(onSelect: option (ReasonReact.Callback.t ReactEventRe.Selection.t))=?
+      onShow::(onShow: option (ReasonReact.Callback.t unit))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       position::(position: option Position.t)=?
       selectable::(selectable: option bool)=?
       selected::(selected: option 'a)=?
@@ -1686,34 +1688,34 @@ module Input = {
       maxLength::(maxLength: option float)=?
       multiline::(multiline: option bool)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onKeyDown::(onKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyPress::(onKeyPress: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyUp::(onKeyUp: option (ReactEventRe.Keyboard.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option (string => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onKeyDown::(onKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyPress::(onKeyPress: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyUp::(onKeyUp: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       required::(required: option bool)=?
       rows::(rows: option float)=?
       style::(style: option ReactDOMRe.style)=?
@@ -1777,28 +1779,28 @@ module Layout = {
     "default" [@@bs.module "react-toolbox/lib/layout/Layout"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -1844,28 +1846,28 @@ module Link = {
       href::(href: option string)=?
       icon::(icon: option ReasonReact.reactElement)=?
       label::(label: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -1911,28 +1913,28 @@ module List = {
     "default" [@@bs.module "react-toolbox/lib/list/List"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       ripple::(ripple: option bool)=?
       selectable::(selectable: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -1982,31 +1984,31 @@ module ListCheckbox = {
       disabled::(disabled: option bool)=?
       legend::(legend: option string)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option (ReasonReact.Callback.t ReactEventRe.Form.t))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2056,28 +2058,28 @@ module ListDivider = {
   let make
       className::(className: option string)=?
       inset::(inset: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2195,28 +2197,28 @@ module ListItemLayout = {
       leftActions::(leftActions: option (array ReasonReact.reactElement))=?
       leftIcon::(leftIcon: option [ | `String string | `Element ReasonReact.reactElement])=?
       legend::(legend: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       rightActions::(rightActions: option (array ReasonReact.reactElement))=?
       rightIcon::(rightIcon: option [ | `String string | `Element ReasonReact.reactElement])=?
       selectable::(selectable: option bool)=?
@@ -2272,28 +2274,28 @@ module ListItemText = {
     "default" [@@bs.module "react-toolbox/lib/list/ListItemText"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       primary::(primary: option bool)=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
@@ -2337,28 +2339,28 @@ module ListSubHeader = {
   let make
       caption::(caption: option string)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2418,31 +2420,31 @@ module Menu = {
   let make
       active::(active: option bool)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onHide::(onHide: option (ReactEventRe.Synthetic.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onSelect::(onSelect: option (ReactEventRe.Selection.t => unit))=?
-      onShow::(onShow: option (ReactEventRe.Synthetic.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onHide::(onHide: option (ReasonReact.Callback.t unit))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onSelect::(onSelect: option (ReasonReact.Callback.t 'value))=?
+      onShow::(onShow: option (ReasonReact.Callback.t unit))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       outline::(outline: option bool)=?
       position::(position: option Position.t)=?
       ripple::(ripple: option bool)=?
@@ -2497,28 +2499,28 @@ module MenuDivider = {
     "default" [@@bs.module "react-toolbox/lib/menu/MenuDivider"];
   let make
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2562,28 +2564,28 @@ module MenuItem = {
       className::(className: option string)=?
       disabled::(disabled: option bool)=?
       icon::(icon: option ReasonReact.reactElement)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       selected::(selected: option bool)=?
       shortcut::(shortcut: option string)=?
       style::(style: option ReactDOMRe.style)=?
@@ -2664,29 +2666,29 @@ module NavDrawer = {
       className::(className: option string)=?
       clipped::(clipped: option bool)=?
       insideTree::(insideTree: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       permanentAt::(permanentAt: option PermanentAt.t)=?
       pinned::(pinned: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -2749,28 +2751,28 @@ module Navigation = {
   let make
       actions::(actions: option (array 'a))=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       routes::(routes: option (array 'b))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
@@ -2818,8 +2820,8 @@ module Overlay = {
       active::(active: option bool)=?
       className::(className: option string)=?
       invisible::(invisible: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onEscKeyDown::(onEscKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onEscKeyDown::(onEscKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
       theme::(theme: option (Js.t {..}))=?
       children =>
     ReasonReact.wrapJsForReason
@@ -2841,28 +2843,28 @@ module Panel = {
   let make
       bodyScroll::(bodyScroll: option bool)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2906,28 +2908,28 @@ module Portal = {
       className::(className: option string)=?
       container::(container: option 'a)=?
       lockBody::(lockBody: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       children =>
     ReasonReact.wrapJsForReason
@@ -2992,28 +2994,28 @@ module ProgressBar = {
       min::(min: option float)=?
       mode::(mode: option Mode.t)=?
       multicolor::(multicolor: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       _type::(_type: option Type.t)=?
@@ -3068,31 +3070,31 @@ module RadioButton = {
       disabled::(disabled: option bool)=?
       label::(label: option ReasonReact.reactElement)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option (ReasonReact.Callback.t ReactEventRe.Form.t))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option 'a)=?
       value::(value: option 'b)=?
@@ -3144,29 +3146,29 @@ module RadioGroup = {
       className::(className: option string)=?
       disabled::(disabled: option bool)=?
       name::(name: option string)=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onChange::(onChange: option (ReasonReact.Callback.t string))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       value::(value: option 'a)=?
       children =>
@@ -3243,29 +3245,29 @@ module Sidebar = {
       className::(className: option string)=?
       clipped::(clipped: option bool)=?
       insideTree::(insideTree: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       permanentAt::(permanentAt: option PermanentAt.t)=?
       pinned::(pinned: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -3325,30 +3327,30 @@ module Slider = {
       editable::(editable: option bool)=?
       max::(max: option float)=?
       min::(min: option float)=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStop::(onDragStop: option (ReactEventRe.Synthetic.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onChange::(onChange: option (float => ReactEventRe.Focus.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStop::(onDragStop: option (ReasonReact.Callback.t unit))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       pinned::(pinned: option bool)=?
       snaps::(snaps: option bool)=?
       step::(step: option float)=?
@@ -3418,29 +3420,29 @@ module Snackbar = {
       active::(active: option bool)=?
       className::(className: option string)=?
       label::(label: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTimeout::(onTimeout: option (ReactEventRe.Synthetic.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTimeout::(onTimeout: option (ReasonReact.Callback.t unit))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       timeout::(timeout: option float)=?
@@ -3493,31 +3495,31 @@ module Switch = {
       disabled::(disabled: option bool)=?
       label::(label: option string)=?
       name::(name: option string)=?
-      onBlur::(onBlur: option (ReactEventRe.Focus.t => unit))=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onFocus::(onFocus: option (ReactEventRe.Focus.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onBlur::(onBlur: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onChange::(onChange: option (Js.boolean => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onFocus::(onFocus: option (ReasonReact.Callback.t ReactEventRe.Focus.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -3571,29 +3573,29 @@ module Tab = {
       hidden::(hidden: option bool)=?
       icon::(icon: option ReasonReact.reactElement)=?
       label::(label: string)
-      onActive::(onActive: option (ReactEventRe.Synthetic.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onActive::(onActive: option (ReasonReact.Callback.t unit))=?
+      onClick::(onClick: option (ReactEventRe.Mouse.t => float => unit))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -3642,28 +3644,28 @@ module TabContent = {
   let make
       active::(active: option bool)=?
       className::(className: option string)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       tabIndex::(tabIndex: option float)=?
       theme::(theme: option (Js.t {..}))=?
@@ -3708,29 +3710,29 @@ module Table = {
   let make
       className::(className: option string)=?
       multiSelectable::(multiSelectable: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onRowSelect::(onRowSelect: option (ReactEventRe.Synthetic.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onRowSelect::(onRowSelect: option (ReasonReact.Callback.t (array float)))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       selectable::(selectable: option bool)=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
@@ -3796,28 +3798,28 @@ module TableCell = {
       className::(className: option string)=?
       column::(column: option float)=?
       numeric::(numeric: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       row::(row: option float)=?
       sorted::(sorted: option Sorted.t)=?
       style::(style: option ReactDOMRe.style)=?
@@ -3868,29 +3870,29 @@ module TableHead = {
       className::(className: option string)=?
       displaySelect::(displaySelect: option bool)=?
       multiSelectable::(multiSelectable: option bool)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onSelect::(onSelect: option (ReactEventRe.Selection.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onSelect::(onSelect: option (Js.boolean => ReactEventRe.Mouse.t => unit))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       selectable::(selectable: option bool)=?
       selected::(selected: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -3941,29 +3943,29 @@ module TableRow = {
   let make
       className::(className: option string)=?
       idx::(idx: option float)=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onSelect::(onSelect: option (ReactEventRe.Selection.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onSelect::(onSelect: option (ReasonReact.Callback.t ReactEventRe.Selection.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       selectable::(selectable: option bool)=?
       selected::(selected: option bool)=?
       style::(style: option ReactDOMRe.style)=?
@@ -4024,29 +4026,29 @@ module Tabs = {
       hideMode::(hideMode: option HideMode.t)=?
       index::(index: option float)=?
       inverse::(inverse: option bool)=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
-      onDoubleClick::(onDoubleClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDrag::(onDrag: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnd::(onDragEnd: option (ReactEventRe.Mouse.t => unit))=?
-      onDragEnter::(onDragEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onDragExit::(onDragExit: option (ReactEventRe.Mouse.t => unit))=?
-      onDragLeave::(onDragLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onDragOver::(onDragOver: option (ReactEventRe.Mouse.t => unit))=?
-      onDragStart::(onDragStart: option (ReactEventRe.Mouse.t => unit))=?
-      onDrop::(onDrop: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseDown::(onMouseDown: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseEnter::(onMouseEnter: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseLeave::(onMouseLeave: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseMove::(onMouseMove: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOut::(onMouseOut: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseOver::(onMouseOver: option (ReactEventRe.Mouse.t => unit))=?
-      onMouseUp::(onMouseUp: option (ReactEventRe.Mouse.t => unit))=?
-      onTouchCancel::(onTouchCancel: option (ReactEventRe.Touch.t => unit))=?
-      onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
-      onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
-      onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
+      onChange::(onChange: option (ReasonReact.Callback.t float))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnd::(onDragEnd: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragEnter::(onDragEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragExit::(onDragExit: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragLeave::(onDragLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragOver::(onDragOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDragStart::(onDragStart: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDrop::(onDrop: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseDown::(onMouseDown: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseEnter::(onMouseEnter: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseLeave::(onMouseLeave: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseMove::(onMouseMove: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
+      onTouchStart::(onTouchStart: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -4112,12 +4114,12 @@ module TimePicker = {
       inputClassName::(inputClassName: option string)=?
       label::(label: option string)=?
       okLabel::(okLabel: option string)=?
-      onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-      onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
-      onDismiss::(onDismiss: option (ReactEventRe.Synthetic.t => unit))=?
-      onEscKeyDown::(onEscKeyDown: option (ReactEventRe.Keyboard.t => unit))=?
-      onKeyPress::(onKeyPress: option (ReactEventRe.Keyboard.t => unit))=?
-      onOverlayClick::(onOverlayClick: option (ReactEventRe.Mouse.t => unit))=?
+      onChange::(onChange: option (Js.Date.t => ReactEventRe.Mouse.t => unit))=?
+      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onDismiss::(onDismiss: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onEscKeyDown::(onEscKeyDown: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onKeyPress::(onKeyPress: option (ReasonReact.Callback.t ReactEventRe.Keyboard.t))=?
+      onOverlayClick::(onOverlayClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
       readonly::(readonly: option bool)=?
       theme::(theme: option (Js.t {..}))=?
       value::(value: option Js.Date.t)=?

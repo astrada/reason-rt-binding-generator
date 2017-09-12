@@ -22,30 +22,30 @@ module AppBar: {
     fixed::bool? =>
     flat::bool? =>
     leftIcon::ReasonReact.reactElement? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onLeftIconClick::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onRightIconClick::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onLeftIconClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onRightIconClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     rightIcon::ReasonReact.reactElement? =>
     scrollHide::bool? =>
     style::ReactDOMRe.style? =>
@@ -132,35 +132,35 @@ module Autocomplete: {
     multiline::bool? =>
     multiple::bool? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyUp::(ReactEventRe.Keyboard.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onQueryChange::(ReactEventRe.Synthetic.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::(ReactEventRe.Focus.t => string => unit)? =>
+    onChange::('value => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyPress::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyUp::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onQueryChange::ReasonReact.Callback.t string? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     required::bool? =>
     rows::float? =>
     selectedPosition::SelectedPosition.t? =>
@@ -196,28 +196,28 @@ module Avatar: {
     cover::bool? =>
     icon::ReasonReact.reactElement? =>
     image::ReasonReact.reactElement? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     title::string? =>
@@ -262,28 +262,28 @@ module BrowseButton: {
     label::string? =>
     mini::bool? =>
     neutral::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     primary::bool? =>
     raised::bool? =>
     ripple::bool? =>
@@ -331,28 +331,28 @@ module Button: {
     label::string? =>
     mini::bool? =>
     neutral::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     primary::bool? =>
     raised::bool? =>
     ripple::bool? =>
@@ -377,28 +377,28 @@ module Card: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     raised::bool? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
@@ -419,28 +419,28 @@ module CardActions: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -474,28 +474,28 @@ module CardMedia: {
     color::string? =>
     contentOverlay::bool? =>
     image::ReasonReact.reactElement? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -515,28 +515,28 @@ module CardText: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -560,28 +560,28 @@ module CardTitle: {
   let make:
     avatar::ReasonReact.reactElement? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     subtitle::ReasonReact.reactElement? =>
     theme::Js.t {..}? =>
@@ -613,30 +613,30 @@ module Checkbox: {
     disabled::bool? =>
     label::ReasonReact.reactElement? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::(Js.boolean => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -659,29 +659,29 @@ module Chip: {
   let make:
     className::string? =>
     deletable::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDeleteClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDeleteClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -766,33 +766,33 @@ module DatePicker: {
     minDate::Js.Date.t? =>
     name::string? =>
     okLabel::string? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDismiss::(ReactEventRe.Synthetic.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onChange::(Js.Date.t => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDismiss::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onEscKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyPress::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     readonly::bool? =>
     style::ReactDOMRe.style? =>
     sundayFirstDayOfWeek::bool? =>
@@ -833,33 +833,33 @@ module Dialog: {
     actions::array (Js.t {..})? =>
     active::bool? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onEscKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     title::string? =>
@@ -894,29 +894,29 @@ module Drawer: {
     active::bool? =>
     className::string? =>
     insideTree::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     _type::Type.t? =>
@@ -957,31 +957,31 @@ module Dropdown: {
     error::string? =>
     label::string? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::('value => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     required::bool? =>
     source::array 'a =>
     style::ReactDOMRe.style? =>
@@ -1005,28 +1005,28 @@ module FontIcon: {
       @param value The key string for the icon you want be displayed. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     value::ReasonReact.reactElement? =>
     array ReasonReact.reactElement =>
@@ -1061,28 +1061,28 @@ module IconButton: {
     icon::ReasonReact.reactElement? =>
     inverse::bool? =>
     neutral::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     primary::bool? =>
     ripple::bool? =>
     style::ReactDOMRe.style? =>
@@ -1127,31 +1127,31 @@ module IconMenu: {
     icon::ReasonReact.reactElement? =>
     iconRipple::bool? =>
     menuRipple::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onHide::(ReactEventRe.Synthetic.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onSelect::(ReactEventRe.Selection.t => unit)? =>
-    onShow::(ReactEventRe.Synthetic.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onHide::ReasonReact.Callback.t unit? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onSelect::ReasonReact.Callback.t ReactEventRe.Selection.t? =>
+    onShow::ReasonReact.Callback.t unit? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     position::Position.t? =>
     selectable::bool? =>
     selected::'a? =>
@@ -1202,34 +1202,34 @@ module Input: {
     maxLength::float? =>
     multiline::bool? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyUp::(ReactEventRe.Keyboard.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::(string => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyPress::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyUp::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     required::bool? =>
     rows::float? =>
     style::ReactDOMRe.style? =>
@@ -1253,28 +1253,28 @@ module Layout: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1304,28 +1304,28 @@ module Link: {
     href::string? =>
     icon::ReasonReact.reactElement? =>
     label::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1347,28 +1347,28 @@ module List: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     ripple::bool? =>
     selectable::bool? =>
     style::ReactDOMRe.style? =>
@@ -1403,31 +1403,31 @@ module ListCheckbox: {
     disabled::bool? =>
     legend::string? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::ReasonReact.Callback.t ReactEventRe.Form.t? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1449,28 +1449,28 @@ module ListDivider: {
   let make:
     className::string? =>
     inset::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1561,28 +1561,28 @@ module ListItemLayout: {
     leftActions::array ReasonReact.reactElement? =>
     leftIcon::[ | `String string | `Element ReasonReact.reactElement]? =>
     legend::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     rightActions::array ReasonReact.reactElement? =>
     rightIcon::[ | `String string | `Element ReasonReact.reactElement]? =>
     selectable::bool? =>
@@ -1607,28 +1607,28 @@ module ListItemText: {
       @param theme Object defining the component class name mappings. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     primary::bool? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
@@ -1651,28 +1651,28 @@ module ListSubHeader: {
   let make:
     caption::string? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1712,31 +1712,31 @@ module Menu: {
   let make:
     active::bool? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onHide::(ReactEventRe.Synthetic.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onSelect::(ReactEventRe.Selection.t => unit)? =>
-    onShow::(ReactEventRe.Synthetic.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onHide::ReasonReact.Callback.t unit? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onSelect::ReasonReact.Callback.t 'value? =>
+    onShow::ReasonReact.Callback.t unit? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     outline::bool? =>
     position::Position.t? =>
     ripple::bool? =>
@@ -1761,28 +1761,28 @@ module MenuDivider: {
       @param theme Classnames object defining the component style. */
   let make:
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1810,28 +1810,28 @@ module MenuItem: {
     className::string? =>
     disabled::bool? =>
     icon::ReasonReact.reactElement? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     selected::bool? =>
     shortcut::string? =>
     style::ReactDOMRe.style? =>
@@ -1882,29 +1882,29 @@ module NavDrawer: {
     className::string? =>
     clipped::bool? =>
     insideTree::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     permanentAt::PermanentAt.t? =>
     pinned::bool? =>
     style::ReactDOMRe.style? =>
@@ -1938,28 +1938,28 @@ module Navigation: {
   let make:
     actions::array 'a? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     routes::array 'b? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
@@ -1981,8 +1981,8 @@ module Overlay: {
     active::bool? =>
     className::string? =>
     invisible::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onEscKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
@@ -2003,28 +2003,28 @@ module Panel: {
   let make:
     bodyScroll::bool? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -2045,28 +2045,28 @@ module Portal: {
     className::string? =>
     container::'a? =>
     lockBody::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
@@ -2111,28 +2111,28 @@ module ProgressBar: {
     min::float? =>
     mode::Mode.t? =>
     multicolor::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     _type::Type.t? =>
@@ -2166,31 +2166,31 @@ module RadioButton: {
     disabled::bool? =>
     label::ReasonReact.reactElement? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::ReasonReact.Callback.t ReactEventRe.Form.t? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::'a? =>
     value::'b? =>
@@ -2216,29 +2216,29 @@ module RadioGroup: {
     className::string? =>
     disabled::bool? =>
     name::string? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onChange::ReasonReact.Callback.t string? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     value::'a? =>
     array ReasonReact.reactElement =>
@@ -2288,29 +2288,29 @@ module Sidebar: {
     className::string? =>
     clipped::bool? =>
     insideTree::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     permanentAt::PermanentAt.t? =>
     pinned::bool? =>
     style::ReactDOMRe.style? =>
@@ -2352,30 +2352,30 @@ module Slider: {
     editable::bool? =>
     max::float? =>
     min::float? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStop::(ReactEventRe.Synthetic.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onChange::(float => ReactEventRe.Focus.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStop::ReasonReact.Callback.t unit? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     pinned::bool? =>
     snaps::bool? =>
     step::float? =>
@@ -2415,29 +2415,29 @@ module Snackbar: {
     active::bool? =>
     className::string? =>
     label::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTimeout::(ReactEventRe.Synthetic.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTimeout::ReasonReact.Callback.t unit? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     timeout::float? =>
@@ -2470,31 +2470,31 @@ module Switch: {
     disabled::bool? =>
     label::string? =>
     name::string? =>
-    onBlur::(ReactEventRe.Focus.t => unit)? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onFocus::(ReactEventRe.Focus.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onBlur::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onChange::(Js.boolean => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onFocus::ReasonReact.Callback.t ReactEventRe.Focus.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -2527,29 +2527,29 @@ module Tab: {
     hidden::bool? =>
     icon::ReasonReact.reactElement? =>
     label::string =>
-    onActive::(ReactEventRe.Synthetic.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onActive::ReasonReact.Callback.t unit? =>
+    onClick::(ReactEventRe.Mouse.t => float => unit)? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -2572,28 +2572,28 @@ module TabContent: {
   let make:
     active::bool? =>
     className::string? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     tabIndex::float? =>
     theme::Js.t {..}? =>
@@ -2618,29 +2618,29 @@ module Table: {
   let make:
     className::string? =>
     multiSelectable::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onRowSelect::(ReactEventRe.Synthetic.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onRowSelect::ReasonReact.Callback.t (array float)? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     selectable::bool? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
@@ -2680,28 +2680,28 @@ module TableCell: {
     className::string? =>
     column::float? =>
     numeric::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     row::float? =>
     sorted::Sorted.t? =>
     style::ReactDOMRe.style? =>
@@ -2731,29 +2731,29 @@ module TableHead: {
     className::string? =>
     displaySelect::bool? =>
     multiSelectable::bool? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onSelect::(ReactEventRe.Selection.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onSelect::(Js.boolean => ReactEventRe.Mouse.t => unit)? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     selectable::bool? =>
     selected::bool? =>
     style::ReactDOMRe.style? =>
@@ -2780,29 +2780,29 @@ module TableRow: {
   let make:
     className::string? =>
     idx::float? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onSelect::(ReactEventRe.Selection.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onSelect::ReasonReact.Callback.t ReactEventRe.Selection.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     selectable::bool? =>
     selected::bool? =>
     style::ReactDOMRe.style? =>
@@ -2843,29 +2843,29 @@ module Tabs: {
     hideMode::HideMode.t? =>
     index::float? =>
     inverse::bool? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
-    onDoubleClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDrag::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnd::(ReactEventRe.Mouse.t => unit)? =>
-    onDragEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onDragExit::(ReactEventRe.Mouse.t => unit)? =>
-    onDragLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onDragOver::(ReactEventRe.Mouse.t => unit)? =>
-    onDragStart::(ReactEventRe.Mouse.t => unit)? =>
-    onDrop::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseDown::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseEnter::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseLeave::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseMove::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOut::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseOver::(ReactEventRe.Mouse.t => unit)? =>
-    onMouseUp::(ReactEventRe.Mouse.t => unit)? =>
-    onTouchCancel::(ReactEventRe.Touch.t => unit)? =>
-    onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
-    onTouchMove::(ReactEventRe.Touch.t => unit)? =>
-    onTouchStart::(ReactEventRe.Touch.t => unit)? =>
+    onChange::ReasonReact.Callback.t float? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnd::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragExit::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDragStart::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDrop::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseDown::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseEnter::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseLeave::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseMove::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
+    onTouchStart::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -2907,12 +2907,12 @@ module TimePicker: {
     inputClassName::string? =>
     label::string? =>
     okLabel::string? =>
-    onChange::(ReactEventRe.Form.t => unit)? =>
-    onClick::(ReactEventRe.Mouse.t => unit)? =>
-    onDismiss::(ReactEventRe.Synthetic.t => unit)? =>
-    onEscKeyDown::(ReactEventRe.Keyboard.t => unit)? =>
-    onKeyPress::(ReactEventRe.Keyboard.t => unit)? =>
-    onOverlayClick::(ReactEventRe.Mouse.t => unit)? =>
+    onChange::(Js.Date.t => ReactEventRe.Mouse.t => unit)? =>
+    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onDismiss::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onEscKeyDown::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onKeyPress::ReasonReact.Callback.t ReactEventRe.Keyboard.t? =>
+    onOverlayClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
     readonly::bool? =>
     theme::Js.t {..}? =>
     value::Js.Date.t? =>
