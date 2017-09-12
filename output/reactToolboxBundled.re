@@ -3764,7 +3764,7 @@ module TableCell = {
       className::(className: option string)=?
       column::(column: option float)=?
       numeric::(numeric: option bool)=?
-      onClick::(onClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
+      onClick::(onClick: option (ReactEventRe.Mouse.t => float => float => unit))=?
       onContextMenu::(onContextMenu: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
       onDoubleClick::(onDoubleClick: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
       onDrag::(onDrag: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
@@ -3925,7 +3925,7 @@ module TableRow = {
       onMouseOut::(onMouseOut: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
       onMouseOver::(onMouseOver: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
       onMouseUp::(onMouseUp: option (ReasonReact.Callback.t ReactEventRe.Mouse.t))=?
-      onSelect::(onSelect: option (ReasonReact.Callback.t ReactEventRe.Selection.t))=?
+      onSelect::(onSelect: option (float => Js.boolean => unit))=?
       onTouchCancel::(onTouchCancel: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       onTouchEnd::(onTouchEnd: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?
       onTouchMove::(onTouchMove: option (ReasonReact.Callback.t ReactEventRe.Touch.t))=?

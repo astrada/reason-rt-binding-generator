@@ -2688,7 +2688,7 @@ module TableCell: {
     className::string? =>
     column::float? =>
     numeric::bool? =>
-    onClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
+    onClick::(ReactEventRe.Mouse.t => float => float => unit)? =>
     onContextMenu::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
     onDoubleClick::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
     onDrag::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
@@ -2806,7 +2806,7 @@ module TableRow: {
     onMouseOut::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
     onMouseOver::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
     onMouseUp::ReasonReact.Callback.t ReactEventRe.Mouse.t? =>
-    onSelect::ReasonReact.Callback.t ReactEventRe.Selection.t? =>
+    onSelect::(float => Js.boolean => unit)? =>
     onTouchCancel::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     onTouchEnd::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
     onTouchMove::ReasonReact.Callback.t ReactEventRe.Touch.t? =>
