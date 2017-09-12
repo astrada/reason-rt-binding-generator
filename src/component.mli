@@ -5,6 +5,7 @@ module Type : sig
   }
 
   type t =
+    | Any
     | String
     | Bool
     | Number
@@ -36,11 +37,13 @@ module Type : sig
 
   val map_type: string -> string -> bool -> t
 
-  val to_string: t -> string
+  val to_string: int ref -> t -> string
 
   val is_option: t -> bool
 
   val is_enum: t -> bool
+
+  val is_any: t -> bool
 
 end
 

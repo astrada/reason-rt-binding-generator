@@ -58,10 +58,12 @@ let write_enum_implementations oc properties =
     enums
 
 let build_props_arg properties =
+  let any_counter = ref 0 in
   let prop_to_string property =
     let name = clean_parameter_name property.Component.Property.name in
     let type_string =
-      Component.Type.to_string property.Component.Property.property_type in
+      Component.Type.to_string any_counter
+        property.Component.Property.property_type in
     let optional_prop_string =
       if Component.Type.is_option property.Component.Property.property_type
       then "=?" else "" in
@@ -79,7 +81,8 @@ let build_js_props properties =
         "Js.Boolean.to_js_boolean " ^ property_name
       | Date
       | String
-      | Object ->
+      | Object
+      | Any ->
         property_name
       | Enum { name; _ } ->
         Printf.sprintf "%s.to_string %s" name property_name
@@ -111,7 +114,8 @@ let build_js_props properties =
         "Js.Null_undefined.from_opt " ^ property_name
       | _ ->
         failwith
-          ("prop_to_string: " ^ (Component.Type.to_string property_type))
+          ("prop_to_string: " ^
+           (Component.Type.to_string (ref 0) property_type))
     in
     Printf.sprintf "\"%s\": %s"
       property.Component.Property.name
@@ -180,12 +184,13 @@ let write_re ~bundled path component_list =
   close_out oc
 
 let build_props_arg_type properties =
+  let any_counter = ref 0 in
   let prop_to_string property =
     let name = property.Component.Property.name in
     let type_string =
       match property.Component.Property.property_type with
-      | Component.Type.Option t -> Component.Type.to_string t
-      | _ as t -> Component.Type.to_string t in
+      | Component.Type.Option t -> Component.Type.to_string any_counter t
+      | _ as t -> Component.Type.to_string any_counter t in
     let optional_prop_string =
       if Component.Type.is_option property.Component.Property.property_type
       then "?" else "" in

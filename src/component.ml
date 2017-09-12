@@ -6,6 +6,7 @@ struct
   }
 
   type t =
+    | Any
     | String
     | Bool
     | Number
@@ -51,7 +52,7 @@ struct
       | "CSSProperties" when type_category = "reference" -> Style
       | "number" when type_category = "intrinsic" -> Number
       | "Date" when type_category = "reference" -> Date
-      | "any" when type_category = "intrinsic" -> Object
+      | "any" when type_category = "intrinsic" -> Any
       | _ when type_category = "reference" -> Object
       | _ -> failwith ("map_type: " ^ type_name) in
     if is_optional then Option t else t
@@ -78,13 +79,31 @@ struct
     | GenericCallback -> "`Callback"
     | Element -> "`Element"
     | Style
-    | Object -> "`Object"
+    | Object
+    | Any -> "`Object"
     | Enum _ -> "`Enum"
     | Array _
     | Option _
     | Union _ -> failwith "Unsupported type in union"
 
-  let rec to_string = function
+  let any_to_string counter =
+    let letter_base = (Char.code 'a') - 1 in
+    let number_base = (Char.code '0') - 1 in
+    let char_index = counter mod 26 in
+    let number_index = counter / 26 in
+    let character = Char.chr (letter_base + char_index) in
+    if number_index = 0 then
+      "'" ^ (String.make 1 character)
+    else
+      let number = Char.chr (number_base + number_index) in
+      "'" ^ (String.make 1 character) ^ (String.make 1 number)
+
+  let rec to_string counter_ref = function
+    | Any ->
+      begin
+        incr counter_ref;
+        any_to_string !counter_ref
+      end
     | String -> "string"
     | Bool -> "bool"
     | Number -> "float"
@@ -108,11 +127,12 @@ struct
     | Style -> "ReactDOMRe.style"
     | Object -> "(Js.t {..})"
     | Enum { name; _ } -> name ^ ".t"
-    | Option t -> "(option " ^ (to_string t) ^ ")"
-    | Array t -> "(array " ^ (to_string t) ^ ")"
+    | Option t -> "(option " ^ (to_string counter_ref t) ^ ")"
+    | Array t -> "(array " ^ (to_string counter_ref t) ^ ")"
     | Union ts -> "[ | " ^ (String.concat " | " (
         List.map
-          (fun t -> (to_polymorphic_variant t) ^ " " ^ (to_string t))
+          (fun t ->
+             (to_polymorphic_variant t) ^ " " ^ (to_string counter_ref t))
           ts)) ^ "]"
 
   let is_option = function
@@ -121,6 +141,10 @@ struct
 
   let is_enum = function
     | Enum _ -> true
+    | _ -> false
+
+  let is_any = function
+    | Any -> true
     | _ -> false
 
 end
