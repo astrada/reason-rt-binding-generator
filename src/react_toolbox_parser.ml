@@ -175,6 +175,8 @@ let custom_callbacks =
   add ("onSelect", "TableHead")
     (Component.Type.CustomCallback
        "Js.boolean => ReactEventRe.Mouse.t => unit");
+  add ("onSelect", "TableRow")
+    (Component.Type.CustomCallback "float => Js.boolean => unit");
   add ("onSelect", "TimePickerDialog")
     (Component.Type.CustomCallback
        "Js.Date.t => ReactEventRe.Mouse.t => unit");
@@ -216,6 +218,9 @@ let custom_callbacks =
     (Component.Type.CustomCallback "string => ReactEventRe.Mouse.t => unit");
   add ("onClick", "Tab")
     (Component.Type.CustomCallback "ReactEventRe.Mouse.t => float => unit");
+  add ("onClick", "TableCell")
+    (Component.Type.CustomCallback
+       "ReactEventRe.Mouse.t => float => float => unit");
   add ("onDayClick", "CalendarMonth")
     (Component.Type.CustomCallback "ReasonReact.Callback.t float");
   add ("onMove", "ClockHand")
