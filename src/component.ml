@@ -26,6 +26,7 @@ struct
     | AnimationCallback
     | TransitionCallback
     | GenericCallback
+    | CustomCallback of string
     | Element
     | Style
     | Object
@@ -76,7 +77,8 @@ struct
     | ImageCallback
     | AnimationCallback
     | TransitionCallback
-    | GenericCallback -> "`Callback"
+    | GenericCallback
+    | CustomCallback _ -> "`Callback"
     | Element -> "`Element"
     | Style
     | Object
@@ -108,21 +110,22 @@ struct
     | Bool -> "bool"
     | Number -> "float"
     | Date -> "Js.Date.t"
-    | ClipboardCallback -> "(ReactEventRe.Clipboard.t => unit)"
-    | CompositionCallback -> "(ReactEventRe.Composition.t => unit)"
-    | KeyboardCallback -> "(ReactEventRe.Keyboard.t => unit)"
-    | FocusCallback -> "(ReactEventRe.Focus.t => unit)"
-    | FormCallback -> "(ReactEventRe.Form.t => unit)"
-    | MouseCallback -> "(ReactEventRe.Mouse.t => unit)"
-    | SelectionCallback -> "(ReactEventRe.Selection.t => unit)"
-    | TouchCallback -> "(ReactEventRe.Touch.t => unit)"
-    | UICallback -> "(ReactEventRe.UI.t => unit)"
-    | WheelCallback -> "(ReactEventRe.Wheel.t => unit)"
-    | MediaCallback -> "(ReactEventRe.Media.t => unit)"
-    | ImageCallback -> "(ReactEventRe.Image.t => unit)"
-    | AnimationCallback -> "(ReactEventRe.Animation.t => unit)"
-    | TransitionCallback -> "(ReactEventRe.Transition.t => unit)"
-    | GenericCallback -> "(ReactEventRe.Synthetic.t => unit)"
+    | ClipboardCallback -> "(ReasonReact.Callback.t ReactEventRe.Clipboard.t)"
+    | CompositionCallback -> "(ReasonReact.Callback.t ReactEventRe.Composition.t)"
+    | KeyboardCallback -> "(ReasonReact.Callback.t ReactEventRe.Keyboard.t)"
+    | FocusCallback -> "(ReasonReact.Callback.t ReactEventRe.Focus.t)"
+    | FormCallback -> "(ReasonReact.Callback.t ReactEventRe.Form.t)"
+    | MouseCallback -> "(ReasonReact.Callback.t ReactEventRe.Mouse.t)"
+    | SelectionCallback -> "(ReasonReact.Callback.t ReactEventRe.Selection.t)"
+    | TouchCallback -> "(ReasonReact.Callback.t ReactEventRe.Touch.t)"
+    | UICallback -> "(ReasonReact.Callback.t ReactEventRe.UI.t)"
+    | WheelCallback -> "(ReasonReact.Callback.t ReactEventRe.Wheel.t)"
+    | MediaCallback -> "(ReasonReact.Callback.t ReactEventRe.Media.t)"
+    | ImageCallback -> "(ReasonReact.Callback.t ReactEventRe.Image.t)"
+    | AnimationCallback -> "(ReasonReact.Callback.t ReactEventRe.Animation.t)"
+    | TransitionCallback -> "(ReasonReact.Callback.t ReactEventRe.Transition.t)"
+    | GenericCallback -> "(ReasonReact.Callback.t ReactEventRe.Synthetic.t)"
+    | CustomCallback signature -> "(" ^ signature ^ ")"
     | Element -> "ReasonReact.reactElement"
     | Style -> "ReactDOMRe.style"
     | Object -> "(Js.t {..})"
@@ -160,7 +163,7 @@ struct
   let props_blacklist = ["key"; "children"]
 
   let standard_callbacks =
-    let table = Hashtbl.create 52 in
+    let table = Hashtbl.create 36 in
     let add = Hashtbl.add table in
     (* Clipboard events *)
     add "onCopy" Type.ClipboardCallback;
@@ -244,23 +247,6 @@ struct
     add "onAnimationIteration" Type.AnimationCallback;
     (* Transition events *)
     add "onTransitionEnd" Type.TransitionCallback;
-    (* React-toolbox events *)
-    add "onLeftIconClick" Type.MouseCallback;
-    add "onRightIconClick" Type.MouseCallback;
-    add "onHide" Type.GenericCallback;
-    add "onShow" Type.GenericCallback;
-    add "onEscKeyDown" Type.KeyboardCallback;
-    add "onTimeout" Type.GenericCallback;
-    add "onDismiss" Type.GenericCallback;
-    add "onOverlayClick" Type.MouseCallback;
-    add "onDeleteClick" Type.MouseCallback;
-    add "onQueryChange" Type.GenericCallback; (* TODO: 1 param callback *)
-    add "onRowSelect" Type.GenericCallback; (* TODO: review callback *)
-    add "onActive" Type.GenericCallback;
-    add "onDragStop" Type.GenericCallback;
-    add "onOverlayMouseDown" Type.MouseCallback;
-    add "onOverlayMouseMove" Type.MouseCallback;
-    add "onOverlayMouseUp" Type.MouseCallback;
     table
 
   let get_callback_type name =

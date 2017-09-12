@@ -124,7 +124,113 @@ let find_components index =
     []
     class_ids
 
-let build_properties props_json =
+let custom_callbacks =
+  let table = Hashtbl.create 16 in
+  let add = Hashtbl.add table in
+  let unit_callback =
+    Component.Type.CustomCallback "ReasonReact.Callback.t unit" in
+  (* React-toolbox events *)
+  add ("onLeftIconClick", "AppBar") Component.Type.MouseCallback;
+  add ("onRightIconClick", "AppBar") Component.Type.MouseCallback;
+  add ("onHide", "Menu") unit_callback;
+  add ("onHide", "IconMenu") unit_callback;
+  add ("onShow", "Menu") unit_callback;
+  add ("onShow", "IconMenu") unit_callback;
+  add ("onEscKeyDown", "DatePicker") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "DatePickerDialog") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "Dialog") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "Drawer") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "Overlay") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "TimePicker") Component.Type.KeyboardCallback;
+  add ("onEscKeyDown", "TimePickerDialog") Component.Type.KeyboardCallback;
+  add ("onTimeout", "Snackbar") unit_callback;
+  add ("onDismiss", "DatePicker") Component.Type.MouseCallback;
+  add ("onDismiss", "DatePickerDialog") Component.Type.MouseCallback;
+  add ("onDismiss", "TimePicker") Component.Type.MouseCallback;
+  add ("onDismiss", "TimePickerDialog") Component.Type.MouseCallback;
+  add ("onOverlayClick", "DatePicker") Component.Type.MouseCallback;
+  add ("onOverlayClick", "DatePickerDialog") Component.Type.MouseCallback;
+  add ("onOverlayClick", "Dialog") Component.Type.MouseCallback;
+  add ("onOverlayClick", "Drawer") Component.Type.MouseCallback;
+  add ("onOverlayClick", "NavDrawer") Component.Type.MouseCallback;
+  add ("onOverlayClick", "Sidebar") Component.Type.MouseCallback;
+  add ("onOverlayClick", "TimePicker") Component.Type.MouseCallback;
+  add ("onOverlayClick", "TimePickerDialog") Component.Type.MouseCallback;
+  add ("onDeleteClick", "Autocomplete") Component.Type.MouseCallback;
+  add ("onDeleteClick", "Chip") Component.Type.MouseCallback;
+  add ("onQueryChange", "Autocomplete")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t string");
+  add ("onRowSelect", "Table")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t (array float)");
+  add ("onActive", "Tab") unit_callback;
+  add ("onDragStop", "Slider") unit_callback;
+  add ("onOverlayMouseDown", "Dialog") Component.Type.MouseCallback;
+  add ("onOverlayMouseMove", "Dialog") Component.Type.MouseCallback;
+  add ("onOverlayMouseUp", "Dialog") Component.Type.MouseCallback;
+  add ("onSelect", "DatePickerDialog")
+    (Component.Type.CustomCallback
+       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+  add ("onSelect", "Menu")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t 'value");
+  add ("onSelect", "TableHead")
+    (Component.Type.CustomCallback
+       "Js.boolean => ReactEventRe.Mouse.t => unit");
+  add ("onSelect", "TimePickerDialog")
+    (Component.Type.CustomCallback
+       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+  add ("onBlur", "Autocomplete")
+    (Component.Type.CustomCallback "ReactEventRe.Focus.t => string => unit");
+  add ("onChange", "Autocomplete")
+    (Component.Type.CustomCallback "'value => ReactEventRe.Mouse.t => unit");
+  add ("onChange", "Checkbox")
+    (Component.Type.CustomCallback
+       "Js.boolean => ReactEventRe.Mouse.t => unit");
+  add ("onChange", "ClockHours")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t float");
+  add ("onChange", "Clock")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t Js.Date.t");
+  add ("onChange", "TimePicker")
+    (Component.Type.CustomCallback
+       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+  add ("onChange", "ClockMinutes")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t float");
+  add ("onChange", "Dropdown")
+    (Component.Type.CustomCallback "'value => ReactEventRe.Mouse.t => unit");
+  add ("onClick", "CalendarDay")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t float");
+  add ("onChange", "DatePicker")
+    (Component.Type.CustomCallback
+       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+  add ("onChange", "Calendar")
+    (Component.Type.CustomCallback "Js.Date.t => Js.boolean => unit");
+  add ("onChange", "Slider")
+    (Component.Type.CustomCallback "float => ReactEventRe.Focus.t => unit");
+  add ("onChange", "Switch")
+    (Component.Type.CustomCallback
+       "Js.boolean => ReactEventRe.Mouse.t => unit");
+  add ("onChange", "RadioGroup")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t string");
+  add ("onChange", "Tabs")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t float");
+  add ("onChange", "Input")
+    (Component.Type.CustomCallback "string => ReactEventRe.Mouse.t => unit");
+  add ("onClick", "Tab")
+    (Component.Type.CustomCallback "ReactEventRe.Mouse.t => float => unit");
+  add ("onDayClick", "CalendarMonth")
+    (Component.Type.CustomCallback "ReasonReact.Callback.t float");
+  add ("onMove", "ClockHand")
+    (Component.Type.CustomCallback "float => float => unit");
+  table
+
+let get_callback_type prop_name module_name =
+  try
+    Hashtbl.find custom_callbacks (prop_name, module_name)
+  with Not_found ->
+    try
+      Component.Property.get_callback_type prop_name
+    with Failure message -> failwith (message ^ " in module " ^ module_name)
+
+let build_properties module_name props_json =
   let property_kind = 1024 in
   let open Yojson.Basic.Util in
   let properties =
@@ -226,7 +332,7 @@ let build_properties props_json =
              let type_name =
                prop_json |> member "type" |> member "name" |> to_string in
              if Component.Type.is_callback type_category type_name name then
-               let callback_type = Component.Property.get_callback_type name in
+               let callback_type = get_callback_type name module_name in
                if is_optional then Component.Type.Option callback_type
                else callback_type
              else
@@ -264,6 +370,10 @@ let parse path =
          let module_json = Hashtbl.find index component.module_id in
          let props_json = List.map (Hashtbl.find index) component.props_ids in
          let open Yojson.Basic.Util in
+         let module_name =
+           class_json
+           |> member "name"
+           |> to_string in
          let module_path = 
            module_json
            |> member "name"
@@ -271,14 +381,11 @@ let parse path =
            |> clean_module_path in
          let properties =
            props_json
-           |> List.map build_properties
+           |> List.map (build_properties module_name)
            |> List.concat
            |> List.sort compare in
          {
-           Component.name =
-             class_json
-             |> member "name"
-             |> to_string;
+           Component.name = module_name;
            module_path = react_toolbox_base ^ module_path;
            properties;
          }

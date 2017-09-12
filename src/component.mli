@@ -25,6 +25,7 @@ module Type : sig
     | AnimationCallback
     | TransitionCallback
     | GenericCallback
+    | CustomCallback of string
     | Element
     | Style
     | Object
