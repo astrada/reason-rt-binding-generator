@@ -184,12 +184,12 @@ module Autocomplete = {
       selectedPosition::(selectedPosition: option SelectedPosition.t)=?
       showSelectedWhenNotInSource::(showSelectedWhenNotInSource: option bool)=?
       showSuggestionsWhenValueIsSet::(showSuggestionsWhenValueIsSet: option bool)=?
-      source::(source: option (Js.t {..}))=?
+      source::(source: option 'a)=?
       style::(style: option ReactDOMRe.style)=?
       suggestionMatch::(suggestionMatch: option SuggestionMatch.t)=?
-      theme::(theme: option (Js.t {..}))=?
+      theme::(theme: option 'b)=?
       _type::(_type: option string)=?
-      value::(value: option (Js.t {..}))=?
+      value::(value: option 'c)=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
@@ -1368,7 +1368,7 @@ module Dropdown = {
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       required::(required: option bool)=?
-      source::(source: array (Js.t {..}))
+      source::(source: array 'a)
       style::(style: option ReactDOMRe.style)=?
       template::(template: option (Js.t {..}))=?
       theme::(theme: option (Js.t {..}))=?
@@ -1612,7 +1612,7 @@ module IconMenu = {
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       position::(position: option Position.t)=?
       selectable::(selectable: option bool)=?
-      selected::(selected: option (Js.t {..}))=?
+      selected::(selected: option 'a)=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -1703,7 +1703,7 @@ module Input = {
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       _type::(_type: option string)=?
-      value::(value: option (Js.t {..}))=?
+      value::(value: option 'a)=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
@@ -2120,7 +2120,7 @@ module ListItemActions = {
       | Right => "right";
   };
   external reactClass : ReasonReact.reactClass = "default" [@@bs.module "react-toolbox/lib/list"];
-  let make theme::(theme: option (Js.t {..}))=? _type::(_type: option Type.t)=? children =>
+  let make theme::(theme: option 'a)=? _type::(_type: option Type.t)=? children =>
     ReasonReact.wrapJsForReason
       ::reactClass
       props::{
@@ -2197,7 +2197,7 @@ module ListItemLayout = {
       rightIcon::(rightIcon: option [ | `String string | `Element ReasonReact.reactElement])=?
       selectable::(selectable: option bool)=?
       style::(style: option ReactDOMRe.style)=?
-      theme::(theme: option (Js.t {..}))=?
+      theme::(theme: option 'a)=?
       _to::(_to: option string)=?
       children =>
     ReasonReact.wrapJsForReason
@@ -2420,7 +2420,7 @@ module Menu = {
       position::(position: option Position.t)=?
       ripple::(ripple: option bool)=?
       selectable::(selectable: option bool)=?
-      selected::(selected: option (Js.t {..}))=?
+      selected::(selected: option 'a)=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       children =>
@@ -2718,7 +2718,7 @@ module Navigation = {
   external reactClass : ReasonReact.reactClass =
     "default" [@@bs.module "react-toolbox/lib/navigation"];
   let make
-      actions::(actions: option (array (Js.t {..})))=?
+      actions::(actions: option (array 'a))=?
       className::(className: option string)=?
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
@@ -2742,7 +2742,7 @@ module Navigation = {
       onTouchEnd::(onTouchEnd: option (ReactEventRe.Touch.t => unit))=?
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
-      routes::(routes: option (array (Js.t {..})))=?
+      routes::(routes: option (array 'b))=?
       style::(style: option ReactDOMRe.style)=?
       theme::(theme: option (Js.t {..}))=?
       _type::(_type: option Type.t)=?
@@ -2875,7 +2875,7 @@ module Portal = {
     "default" [@@bs.module "react-toolbox/lib/hoc/Portal"];
   let make
       className::(className: option string)=?
-      container::(container: option (Js.t {..}))=?
+      container::(container: option 'a)=?
       lockBody::(lockBody: option bool)=?
       onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
       onContextMenu::(onContextMenu: option (ReactEventRe.Mouse.t => unit))=?
@@ -3064,8 +3064,8 @@ module RadioButton = {
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       style::(style: option ReactDOMRe.style)=?
-      theme::(theme: option (Js.t {..}))=?
-      value::(value: option (Js.t {..}))=?
+      theme::(theme: option 'a)=?
+      value::(value: option 'b)=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass
@@ -3138,7 +3138,7 @@ module RadioGroup = {
       onTouchMove::(onTouchMove: option (ReactEventRe.Touch.t => unit))=?
       onTouchStart::(onTouchStart: option (ReactEventRe.Touch.t => unit))=?
       style::(style: option ReactDOMRe.style)=?
-      value::(value: option (Js.t {..}))=?
+      value::(value: option 'a)=?
       children =>
     ReasonReact.wrapJsForReason
       ::reactClass

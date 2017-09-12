@@ -174,12 +174,12 @@ module Autocomplete: {
     selectedPosition::SelectedPosition.t? =>
     showSelectedWhenNotInSource::bool? =>
     showSuggestionsWhenValueIsSet::bool? =>
-    source::Js.t {..}? =>
+    source::'a? =>
     style::ReactDOMRe.style? =>
     suggestionMatch::SuggestionMatch.t? =>
-    theme::Js.t {..}? =>
+    theme::'b? =>
     _type::string? =>
-    value::Js.t {..}? =>
+    value::'c? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
@@ -991,7 +991,7 @@ module Dropdown: {
     onTouchMove::(ReactEventRe.Touch.t => unit)? =>
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
     required::bool? =>
-    source::array (Js.t {..}) =>
+    source::array 'a =>
     style::ReactDOMRe.style? =>
     template::Js.t {..}? =>
     theme::Js.t {..}? =>
@@ -1162,7 +1162,7 @@ module IconMenu: {
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
     position::Position.t? =>
     selectable::bool? =>
-    selected::Js.t {..}? =>
+    selected::'a? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1243,7 +1243,7 @@ module Input: {
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     _type::string? =>
-    value::Js.t {..}? =>
+    value::'a? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
@@ -1509,7 +1509,7 @@ module ListItemActions: {
       @param theme Object defining the component class name mappings.
       @param type List item action type. */
   let make:
-    theme::Js.t {..}? =>
+    theme::'a? =>
     _type::Type.t? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
@@ -1595,7 +1595,7 @@ module ListItemLayout: {
     rightIcon::[ | `String string | `Element ReasonReact.reactElement]? =>
     selectable::bool? =>
     style::ReactDOMRe.style? =>
-    theme::Js.t {..}? =>
+    theme::'a? =>
     _to::string? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
@@ -1749,7 +1749,7 @@ module Menu: {
     position::Position.t? =>
     ripple::bool? =>
     selectable::bool? =>
-    selected::Js.t {..}? =>
+    selected::'a? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     array ReasonReact.reactElement =>
@@ -1944,7 +1944,7 @@ module Navigation: {
       @param theme Classnames object defining the component style.
       @param type Type of the navigation, it can be vertical or horizontal. */
   let make:
-    actions::array (Js.t {..})? =>
+    actions::array 'a? =>
     className::string? =>
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
@@ -1968,7 +1968,7 @@ module Navigation: {
     onTouchEnd::(ReactEventRe.Touch.t => unit)? =>
     onTouchMove::(ReactEventRe.Touch.t => unit)? =>
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
-    routes::array (Js.t {..})? =>
+    routes::array 'b? =>
     style::ReactDOMRe.style? =>
     theme::Js.t {..}? =>
     _type::Type.t? =>
@@ -2051,7 +2051,7 @@ module Portal: {
       @param style Set inline style for the root component. */
   let make:
     className::string? =>
-    container::Js.t {..}? =>
+    container::'a? =>
     lockBody::bool? =>
     onClick::(ReactEventRe.Mouse.t => unit)? =>
     onContextMenu::(ReactEventRe.Mouse.t => unit)? =>
@@ -2200,8 +2200,8 @@ module RadioButton: {
     onTouchMove::(ReactEventRe.Touch.t => unit)? =>
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
     style::ReactDOMRe.style? =>
-    theme::Js.t {..}? =>
-    value::Js.t {..}? =>
+    theme::'a? =>
+    value::'b? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
@@ -2248,7 +2248,7 @@ module RadioGroup: {
     onTouchMove::(ReactEventRe.Touch.t => unit)? =>
     onTouchStart::(ReactEventRe.Touch.t => unit)? =>
     style::ReactDOMRe.style? =>
-    value::Js.t {..}? =>
+    value::'a? =>
     array ReasonReact.reactElement =>
     ReasonReact.component ReasonReact.stateless ReasonReact.noRetainedProps ReasonReact.actionless;
 };
