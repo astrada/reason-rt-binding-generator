@@ -7,7 +7,7 @@
   "author": "Alessandro Strada",
   "scripts": {
     "typedoc": "typedoc -options typedoc.json -json output/react-toolbox.typedoc.json node_modules/react-toolbox/src/components/",
-    "refmt": "refmt --in-place output/*.re; refmt --in-place --interface=true output/reactToolbox.rei; refmt --in-place --interface=true output/reactToolboxBundled.rei"
+    "refmt": "refmt --in-place output/*.re; refmt --in-place --interface=true output/ReactToolbox.rei; refmt --in-place --interface=true output/ReactToolboxBundled.rei"
   },
   "devDependencies": {
     "@types/react": "^16.0.5",
