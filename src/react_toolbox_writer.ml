@@ -108,10 +108,10 @@ let build_js_props properties =
       | Option ((Enum _) as t)
       | Option ((Union _) as t) ->
         Printf.sprintf
-          "Js.Null_undefined.from_opt (optionMap %s)"
+          "Js.Nullable.from_opt (optionMap %s)"
           (convert t property_name)
       | Option _ ->
-        "Js.Null_undefined.from_opt " ^ property_name
+        "Js.Nullable.from_opt " ^ property_name
       | _ ->
         failwith
           ("prop_to_string: " ^
