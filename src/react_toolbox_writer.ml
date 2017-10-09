@@ -127,25 +127,32 @@ let build_js_props properties =
 
 let write_component_implementation bundled oc component =
   let module_path = component.Component.module_path in
-  let external_module_path =
+  let (external_module_path, module_name) =
     if bundled && has_theme_property component.Component.properties then
+      let len = String.length module_path in
       let last_slash_index =
         try
           String.rindex module_path '/'
-        with Not_found -> String.length module_path in
-      String.sub module_path 0 last_slash_index
-    else module_path in
+        with Not_found -> len in
+      let module_name =
+        if last_slash_index = len then ""
+        else String.sub module_path
+         (last_slash_index + 1)
+         (len - last_slash_index - 1) in
+      (String.sub module_path 0 last_slash_index,
+       module_name)
+    else (module_path, "default") in
   Printf.fprintf oc
     "module %s = {\n"
     component.Component.name;
   write_enum_implementations oc component.Component.properties;
   Printf.fprintf oc
-    "external reactClass : ReasonReact.reactClass = \"default\" \
+    "external reactClass : ReasonReact.reactClass = \"%s\" \
        [@@bs.module \"%s\"];\n\
      let make %s children => \n\
        ReasonReact.wrapJsForReason \
        ::reactClass props::{%s} children;\n};\n"
-    external_module_path
+    module_name external_module_path
     (build_props_arg component.Component.properties)
     (build_js_props component.Component.properties)
 
