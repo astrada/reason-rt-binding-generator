@@ -244,7 +244,7 @@ let write_component_signature oc component =
     component.Component.name
     (build_comment component.Component.properties);
   Printf.fprintf oc
-    "let make:(%s, array(ReasonReact.reactElement)) => \
+    "let make:(%s, 'children) => \
        ReasonReact.component(ReasonReact.stateless, \
        ReasonReact.noRetainedProps, ReasonReact.actionless);\n};\n"
     (build_props_arg_type component.Component.properties)
@@ -255,7 +255,7 @@ let write_rei ~bundled path component_list =
     Printf.fprintf oc
       "module ThemeProvider: {\n\
        type theme;\n\
-       let make:(~theme: theme, array(ReasonReact.reactElement)) => \
+       let make:(~theme: theme, 'children) => \
          ReasonReact.component(ReasonReact.stateless, \
          ReasonReact.noRetainedProps, ReasonReact.actionless);\n\
        };\n";
