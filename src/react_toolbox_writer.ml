@@ -172,7 +172,7 @@ let write_re ~bundled path component_list =
        | `Object(o) => toJsUnsafe(o) \
        | `Enum(_) => assert false;\n\
      let optionMap = (fn, option) => \
-       switch option { \
+       switch (option) { \
            | Some((value)) => Some(fn(value)) \
        | None => None \
      };\n\n";
