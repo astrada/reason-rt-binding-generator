@@ -77,8 +77,7 @@ let build_js_props properties =
     let rec convert property_type property_name =
       let open Component.Type in
       match property_type with
-      | Bool ->
-        "Js.Boolean.to_js_boolean, " ^ property_name
+      | Bool
       | Date
       | String
       | Object
@@ -104,14 +103,13 @@ let build_js_props properties =
           property_name
       | Union _ ->
         "unwrapValue, " ^ property_name
-      | Option (Bool as t)
       | Option ((Enum _) as t)
       | Option ((Union _) as t) ->
         Printf.sprintf
-          "Js.Nullable.from_opt(optionMap(%s))"
+          "Js.Nullable.fromOption(optionMap(%s))"
           (convert t property_name)
       | Option _ ->
-        "Js.Nullable.from_opt(" ^ property_name ^ ")"
+        "Js.Nullable.fromOption(" ^ property_name ^ ")"
       | _ ->
         failwith
           ("prop_to_string: " ^
@@ -164,7 +162,7 @@ let write_re ~bundled path component_list =
      let unwrapValue = \
        fun \
        | `String(s) => toJsUnsafe(s) \
-       | `Bool(b) => toJsUnsafe(Js.Boolean.to_js_boolean(b)) \
+       | `Bool(b) => toJsUnsafe(b) \
        | `Float(f) => toJsUnsafe(f) \
        | `Date(d) => toJsUnsafe(d) \
        | `Callback(c) => toJsUnsafe(c) \
