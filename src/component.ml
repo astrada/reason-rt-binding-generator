@@ -110,21 +110,21 @@ struct
     | Bool -> "bool"
     | Number -> "float"
     | Date -> "Js.Date.t"
-    | ClipboardCallback -> "ReasonReact.Callback.t(ReactEventRe.Clipboard.t)"
-    | CompositionCallback -> "ReasonReact.Callback.t(ReactEventRe.Composition.t)"
-    | KeyboardCallback -> "ReasonReact.Callback.t(ReactEventRe.Keyboard.t)"
-    | FocusCallback -> "ReasonReact.Callback.t(ReactEventRe.Focus.t)"
-    | FormCallback -> "ReasonReact.Callback.t(ReactEventRe.Form.t)"
-    | MouseCallback -> "ReasonReact.Callback.t(ReactEventRe.Mouse.t)"
-    | SelectionCallback -> "ReasonReact.Callback.t(ReactEventRe.Selection.t)"
-    | TouchCallback -> "ReasonReact.Callback.t(ReactEventRe.Touch.t)"
-    | UICallback -> "ReasonReact.Callback.t(ReactEventRe.UI.t)"
-    | WheelCallback -> "ReasonReact.Callback.t(ReactEventRe.Wheel.t)"
-    | MediaCallback -> "ReasonReact.Callback.t(ReactEventRe.Media.t)"
-    | ImageCallback -> "ReasonReact.Callback.t(ReactEventRe.Image.t)"
-    | AnimationCallback -> "ReasonReact.Callback.t(ReactEventRe.Animation.t)"
-    | TransitionCallback -> "ReasonReact.Callback.t(ReactEventRe.Transition.t)"
-    | GenericCallback -> "ReasonReact.Callback.t(ReactEventRe.Synthetic.t)"
+    | ClipboardCallback -> "ReactEventRe.Clipboard.t => unit"
+    | CompositionCallback -> "ReactEventRe.Composition.t => unit"
+    | KeyboardCallback -> "ReactEventRe.Keyboard.t => unit"
+    | FocusCallback -> "ReactEventRe.Focus.t => unit"
+    | FormCallback -> "ReactEventRe.Form.t => unit"
+    | MouseCallback -> "ReactEventRe.Mouse.t => unit"
+    | SelectionCallback -> "ReactEventRe.Selection.t => unit"
+    | TouchCallback -> "ReactEventRe.Touch.t => unit"
+    | UICallback -> "ReactEventRe.UI.t => unit"
+    | WheelCallback -> "ReactEventRe.Wheel.t => unit"
+    | MediaCallback -> "ReactEventRe.Media.t => unit"
+    | ImageCallback -> "ReactEventRe.Image.t => unit"
+    | AnimationCallback -> "ReactEventRe.Animation.t => unit"
+    | TransitionCallback -> "ReactEventRe.Transition.t => unit"
+    | GenericCallback -> "ReactEventRe.Synthetic.t => unit"
     | CustomCallback signature -> "(" ^ signature ^ ")"
     | Element -> "ReasonReact.reactElement"
     | Style -> "ReactDOMRe.style"
@@ -248,6 +248,7 @@ struct
     add "onAnimationIteration" Type.AnimationCallback;
     (* Transition events *)
     add "onTransitionEnd" Type.TransitionCallback;
+    add "onRippleEnded" Type.TransitionCallback;
     table
 
   let get_callback_type name =
