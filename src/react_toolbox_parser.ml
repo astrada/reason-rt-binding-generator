@@ -169,58 +169,58 @@ let custom_callbacks =
   add ("onOverlayMouseUp", "Dialog") Component.Type.MouseCallback;
   add ("onSelect", "DatePickerDialog")
     (Component.Type.CustomCallback
-       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+       "Js.Date.t => ReactEvent.Mouse.t => unit");
   add ("onSelect", "Menu")
     (Component.Type.CustomCallback "'value => unit");
   add ("onSelect", "TableHead")
     (Component.Type.CustomCallback
-       "bool => ReactEventRe.Mouse.t => unit");
+       "bool => ReactEvent.Mouse.t => unit");
   add ("onSelect", "TableRow")
     (Component.Type.CustomCallback "float => bool => unit");
   add ("onSelect", "TimePickerDialog")
     (Component.Type.CustomCallback
-       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+       "Js.Date.t => ReactEvent.Mouse.t => unit");
   add ("onBlur", "Autocomplete")
-    (Component.Type.CustomCallback "ReactEventRe.Focus.t => string => unit");
+    (Component.Type.CustomCallback "ReactEvent.Focus.t => string => unit");
   add ("onChange", "Autocomplete")
-    (Component.Type.CustomCallback "'value => ReactEventRe.Mouse.t => unit");
+    (Component.Type.CustomCallback "'value => ReactEvent.Mouse.t => unit");
   add ("onChange", "Checkbox")
     (Component.Type.CustomCallback
-       "bool => ReactEventRe.Mouse.t => unit");
+       "bool => ReactEvent.Mouse.t => unit");
   add ("onChange", "ClockHours")
     (Component.Type.CustomCallback "float => unit");
   add ("onChange", "Clock")
     (Component.Type.CustomCallback "Js.Date.t => unit");
   add ("onChange", "TimePicker")
     (Component.Type.CustomCallback
-       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+       "Js.Date.t => ReactEvent.Mouse.t => unit");
   add ("onChange", "ClockMinutes")
     (Component.Type.CustomCallback "float => unit");
   add ("onChange", "Dropdown")
-    (Component.Type.CustomCallback "'value => ReactEventRe.Mouse.t => unit");
+    (Component.Type.CustomCallback "'value => ReactEvent.Mouse.t => unit");
   add ("onClick", "CalendarDay")
     (Component.Type.CustomCallback "float => unit");
   add ("onChange", "DatePicker")
     (Component.Type.CustomCallback
-       "Js.Date.t => ReactEventRe.Mouse.t => unit");
+       "Js.Date.t => ReactEvent.Mouse.t => unit");
   add ("onChange", "Calendar")
     (Component.Type.CustomCallback "Js.Date.t => bool => unit");
   add ("onChange", "Slider")
-    (Component.Type.CustomCallback "float => ReactEventRe.Focus.t => unit");
+    (Component.Type.CustomCallback "float => ReactEvent.Focus.t => unit");
   add ("onChange", "Switch")
     (Component.Type.CustomCallback
-       "bool => ReactEventRe.Mouse.t => unit");
+       "bool => ReactEvent.Mouse.t => unit");
   add ("onChange", "RadioGroup")
     (Component.Type.CustomCallback "string => unit");
   add ("onChange", "Tabs")
     (Component.Type.CustomCallback "float => unit");
   add ("onChange", "Input")
-    (Component.Type.CustomCallback "string => ReactEventRe.Mouse.t => unit");
+    (Component.Type.CustomCallback "string => ReactEvent.Mouse.t => unit");
   add ("onClick", "Tab")
-    (Component.Type.CustomCallback "ReactEventRe.Mouse.t => float => unit");
+    (Component.Type.CustomCallback "ReactEvent.Mouse.t => float => unit");
   add ("onClick", "TableCell")
     (Component.Type.CustomCallback
-       "ReactEventRe.Mouse.t => float => float => unit");
+       "ReactEvent.Mouse.t => float => float => unit");
   add ("onDayClick", "CalendarMonth")
     (Component.Type.CustomCallback "float => unit");
   add ("onMove", "ClockHand")
